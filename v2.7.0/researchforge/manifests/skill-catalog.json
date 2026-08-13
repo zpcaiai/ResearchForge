@@ -1,0 +1,1106 @@
+{
+ "name": "ResearchForge Skills",
+ "version": "0.3.0",
+ "skill_count": 32,
+ "artifact_count": 128,
+ "entry_points": [
+  "researchforge-orchestrator",
+  "skill-evolution-manager"
+ ],
+ "entry_point_notes": {
+  "researchforge-orchestrator": "Research run: one paper -> release.",
+  "skill-evolution-manager": "Offline maintenance loop; operates on the system, not on a paper."
+ },
+ "states": [
+  "INGESTED",
+  "MODELED",
+  "EVIDENCE_EXPANDED",
+  "SOURCE_REPRO_ATTEMPTED",
+  "REPRO_LEVEL_ESTABLISHED",
+  "IDEAS_READY",
+  "HUMAN_SELECTION_REQUIRED",
+  "DIRECTION_SELECTED",
+  "BLUEPRINT_READY",
+  "BASELINE_ESTABLISHED",
+  "EXPERIMENTING",
+  "EVIDENCE_LOCKED",
+  "WRITING",
+  "REVIEWING",
+  "DEFENSE_READY",
+  "RELEASED"
+ ],
+ "skills": [
+  {
+   "name": "citation-resolver",
+   "stage": "02-evidence",
+   "description": "Use when reference strings, DOIs or arXiv ids must become canonical records with a renderable bibliography, and when the citation neighbourhood around a seed paper must be mapped. Trigger before any citation is allowed to support a claim.",
+   "consolidates": [
+    "citation-resolver",
+    "citation-neighborhood-miner"
+   ],
+   "depends_on": [
+    "literature-provider-manager"
+   ],
+   "produces": [
+    "bibliography",
+    "citation_clusters",
+    "citation_gap_candidates",
+    "citation_graph",
+    "citation_resolution_report",
+    "resolved_references"
+   ],
+   "consumes": [
+    "provider_registry"
+   ],
+   "feedback_reads": [],
+   "external_inputs": [
+    "external: personal library metadata",
+    "external: raw reference strings or identifiers",
+    "external: seed paper canonical identifier"
+   ]
+  },
+  {
+   "name": "claim-citation-auditor",
+   "stage": "08-writing",
+   "description": "Use when a draft exists and every claim must be checked against its cited source or experiment record, and as the final pre-submission verdict on whether anything unsupported survived. Trigger before any submission or release; citation existence is not citation support.",
+   "consolidates": [
+    "claim-citation-auditor",
+    "paper-quality-integrity-gate"
+   ],
+   "depends_on": [
+    "citation-resolver",
+    "claim-evidence-graph",
+    "experiment-runner",
+    "integrity-auditor",
+    "manuscript-builder",
+    "reproduction-fallback-planner",
+    "result-reproducer"
+   ],
+   "produces": [
+    "citation_audit",
+    "claim_audit",
+    "integrity_gate",
+    "submission_blockers"
+   ],
+   "consumes": [
+    "comparison_mode",
+    "draft_manifest",
+    "evidence_graph",
+    "experiment_ledger",
+    "manuscript_draft",
+    "resolved_references",
+    "source_repro_report",
+    "stats_audit"
+   ],
+   "feedback_reads": [
+    "response_to_reviewers",
+    "review_triage",
+    "revision_experiment_plan",
+    "revision_matrix"
+   ],
+   "external_inputs": []
+  },
+  {
+   "name": "claim-evidence-graph",
+   "stage": "02-evidence",
+   "description": "Use when claims must be bound to the evidence supporting them — first for the source paper, later for your own manuscript. Trigger after parsing, and again whenever new experimental evidence lands.",
+   "consolidates": [
+    "paper-claim-evidence-graph"
+   ],
+   "depends_on": [
+    "citation-resolver",
+    "paper-model-builder"
+   ],
+   "produces": [
+    "claim_registry",
+    "evidence_graph"
+   ],
+   "consumes": [
+    "paper_model",
+    "resolved_references"
+   ],
+   "feedback_reads": [],
+   "external_inputs": []
+  },
+  {
+   "name": "codebase-scaffolder",
+   "stage": "06-execution",
+   "description": "Use when experiment specs must become an actual code branch with tests, and when the resulting runs fail and need bounded diagnosis rather than blind retry. Trigger after specs exist and the sandbox is provisioned.",
+   "consolidates": [
+    "codebase-scaffolder",
+    "debug-and-repair"
+   ],
+   "depends_on": [
+    "research-blueprint-compiler",
+    "result-reproducer"
+   ],
+   "produces": [
+    "code_tests",
+    "code_worktree",
+    "debug_terminal_status",
+    "failure_diagnosis",
+    "implementation_plan",
+    "repair_commits"
+   ],
+   "consumes": [
+    "baseline_assets",
+    "experiment_specs",
+    "research_blueprint"
+   ],
+   "feedback_reads": [
+    "experiment_ledger"
+   ],
+   "external_inputs": []
+  },
+  {
+   "name": "data-analyst",
+   "stage": "07-analysis",
+   "description": "Use when raw data must be profiled, cleaned, split and leakage-checked, and when experiment results must become computed answers, diagnostic plots and an analyst-grade narrative. Trigger before any result is interpreted.",
+   "consolidates": [
+    "data-prep-agent",
+    "data-analysis-agent"
+   ],
+   "depends_on": [
+    "experiment-runner",
+    "research-blueprint-compiler"
+   ],
+   "produces": [
+    "analysis_code",
+    "analysis_plots",
+    "analysis_report",
+    "analysis_results"
+   ],
+   "consumes": [
+    "best_candidate",
+    "experiment_ledger",
+    "experiment_specs",
+    "experiment_tree",
+    "ranked_branches"
+   ],
+   "feedback_reads": [],
+   "external_inputs": [
+    "external: analysis question",
+    "external: raw dataset"
+   ]
+  },
+  {
+   "name": "deck-factory",
+   "stage": "10-slides",
+   "description": "Use when a defense or talk must be produced as native editable PowerPoint objects, with every quantitative element on every slide bound to a project artifact. Trigger once the manuscript's evidence is locked.",
+   "consolidates": [
+    "defense-ppt-storyline",
+    "paper-to-ppt-evidence-mapper",
+    "defense-ppt-generator"
+   ],
+   "depends_on": [
+    "experiment-runner",
+    "figure-factory",
+    "integrity-auditor",
+    "manuscript-builder",
+    "reproduction-fallback-planner"
+   ],
+   "produces": [
+    "deck_manifest",
+    "defense_deck",
+    "speaker_notes"
+   ],
+   "consumes": [
+    "comparison_mode",
+    "draft_manifest",
+    "editable_svg",
+    "experiment_ledger",
+    "manuscript_draft",
+    "manuscript_spine",
+    "meta_analysis",
+    "selected_figure",
+    "svg_element_map",
+    "svg_validation_report"
+   ],
+   "feedback_reads": [],
+   "external_inputs": [
+    "external: PPTX template",
+    "external: defense audience profile",
+    "external: target talk duration"
+   ]
+  },
+  {
+   "name": "evaluator-builder",
+   "stage": "05-planning",
+   "description": "Use when scoring must be defined and decisive tests kept outside the agent's reach. Trigger before experiments run, and re-trigger whenever the metric definition changes.",
+   "consolidates": [
+    "metric-and-hidden-evaluator-builder"
+   ],
+   "depends_on": [],
+   "produces": [
+    "evaluator_code",
+    "evaluator_spec",
+    "hidden_tests"
+   ],
+   "consumes": [],
+   "feedback_reads": [],
+   "external_inputs": [
+    "external: known failure modes and gaming patterns",
+    "external: research objective",
+    "external: submission/answer schema"
+   ]
+  },
+  {
+   "name": "experiment-runner",
+   "stage": "06-execution",
+   "description": "Use when experimental branches must be explored under a budget, every run recorded, and every artifact given lineage. Trigger after scaffolding; a number that never entered the ledger cannot enter the manuscript.",
+   "consolidates": [
+    "experiment-tree-search",
+    "experiment-ledger",
+    "artifact-provenance"
+   ],
+   "depends_on": [
+    "codebase-scaffolder",
+    "evaluator-builder",
+    "idea-portfolio-generator",
+    "research-blueprint-compiler",
+    "sandbox-provisioner"
+   ],
+   "produces": [
+    "artifact_manifest",
+    "best_candidate",
+    "experiment_ledger",
+    "experiment_tree",
+    "provenance_log",
+    "ranked_branches"
+   ],
+   "consumes": [
+    "acceptance_criteria",
+    "blueprint_dag",
+    "code_tests",
+    "code_worktree",
+    "debug_terminal_status",
+    "environment_lock",
+    "evaluator_code",
+    "evaluator_spec",
+    "experiment_specs",
+    "failure_diagnosis",
+    "hidden_tests",
+    "idea_lineage_graph",
+    "implementation_plan",
+    "mutant_candidates",
+    "repair_commits",
+    "research_blueprint",
+    "sandbox_container_config",
+    "sandbox_manifest"
+   ],
+   "feedback_reads": [],
+   "external_inputs": [
+    "external: artifact creation and edit events",
+    "external: runtime execution events"
+   ]
+  },
+  {
+   "name": "figure-factory",
+   "stage": "09-visuals",
+   "description": "Use when the argument determines which figures must exist, and each must become a publication-quality, semantically editable vector figure — whether drawn from data, reconstructed from an existing raster, or both. Trigger after the data behind each figure is audited.",
+   "consolidates": [
+    "figure-storyboard",
+    "scientific-figure-generator",
+    "vector-figure-reconstructor",
+    "editable-svg-refiner"
+   ],
+   "depends_on": [
+    "claim-evidence-graph",
+    "data-analyst",
+    "manuscript-builder"
+   ],
+   "produces": [
+    "editable_svg",
+    "figure_generation_trace",
+    "selected_figure",
+    "svg_element_map",
+    "svg_validation_report"
+   ],
+   "consumes": [
+    "analysis_plots",
+    "analysis_results",
+    "evidence_graph",
+    "figure_plan",
+    "manuscript_spine"
+   ],
+   "feedback_reads": [],
+   "external_inputs": [
+    "external: figure style reference",
+    "external: raster figure or structured visual spec",
+    "external: source raster figure",
+    "external: target venue"
+   ]
+  },
+  {
+   "name": "finding-memory",
+   "stage": "07-analysis",
+   "description": "Use when evidence across the run must be distilled into durable findings that later stages and later projects can read, including the failures and null results worth keeping. Trigger at every evidence lock point, and before any failed branch is discarded.",
+   "consolidates": [
+    "finding-memory-manager",
+    "negative-result-curator"
+   ],
+   "depends_on": [
+    "citation-resolver",
+    "claim-evidence-graph",
+    "data-analyst",
+    "experiment-runner",
+    "idea-evaluator",
+    "idea-seed-miner",
+    "integrity-auditor",
+    "literature-provider-manager",
+    "literature-search",
+    "paper-ingest",
+    "paper-model-builder",
+    "project-repo-manager",
+    "reproduction-fallback-planner",
+    "result-reproducer",
+    "user-feedback-gate"
+   ],
+   "produces": [
+    "boundary_conditions",
+    "finding_memory_graph",
+    "findings",
+    "negative_findings"
+   ],
+   "consumes": [
+    "analysis_code",
+    "analysis_report",
+    "assumption_tests",
+    "baseline_deviation_log",
+    "baseline_license_risk",
+    "baseline_metrics",
+    "baseline_repo_rankings",
+    "benchmark_matrix",
+    "branch_map",
+    "checkpoint_metadata",
+    "citation_gap_candidates",
+    "citation_resolution_report",
+    "claim_registry",
+    "closest_prior_work",
+    "contribution_atoms",
+    "decision_log",
+    "experiment_ledger",
+    "experiment_tree",
+    "fallback_decision_log",
+    "figure_table_index",
+    "gap_evidence",
+    "landscape_report",
+    "layout_warnings",
+    "library_hits",
+    "library_note_links",
+    "literature_retrieval_log",
+    "literature_search_plan",
+    "locator_map",
+    "meta_analysis",
+    "meta_analysis_decision",
+    "paper_assets",
+    "paper_source_file",
+    "quest_repo",
+    "quota_ledger",
+    "repro_failure_taxonomy",
+    "reproduction_report",
+    "section_map",
+    "source_manifest",
+    "source_repro_metrics",
+    "source_repro_plan",
+    "system_matrix",
+    "visual_notes"
+   ],
+   "feedback_reads": [
+    "deck_manifest",
+    "figure_generation_trace",
+    "manuscript_pdf",
+    "response_to_reviewers",
+    "review_triage",
+    "revision_experiment_plan",
+    "revision_matrix",
+    "speaker_notes"
+   ],
+   "external_inputs": []
+  },
+  {
+   "name": "idea-evaluator",
+   "stage": "04-innovation",
+   "description": "Use when candidate ideas need evidenced novelty verdicts with their closest prior work named, and honest cost, dependency-risk and data-availability scores with uncertainty kept separate. Trigger for every candidate before ranking.",
+   "consolidates": [
+    "novelty-verifier",
+    "feasibility-estimator"
+   ],
+   "depends_on": [
+    "citation-resolver",
+    "idea-portfolio-generator",
+    "literature-provider-manager",
+    "reproduction-fallback-planner",
+    "result-reproducer"
+   ],
+   "produces": [
+    "closest_prior_work",
+    "feasibility_report",
+    "novelty_report"
+   ],
+   "consumes": [
+    "baseline_assets",
+    "citation_graph",
+    "comparison_mode",
+    "coverage_report",
+    "idea_portfolio",
+    "provider_registry",
+    "source_repro_report"
+   ],
+   "feedback_reads": [],
+   "external_inputs": [
+    "external: resource envelope (compute, time, budget)"
+   ]
+  },
+  {
+   "name": "idea-portfolio-generator",
+   "stage": "04-innovation",
+   "description": "Use when seed mining is complete and multiple candidate directions must be generated under the constraints the reproduction level imposes, including variants recombined from existing candidates and prior findings. Trigger before any single idea is committed to.",
+   "consolidates": [
+    "idea-portfolio-generator",
+    "genetic-idea-mutator"
+   ],
+   "depends_on": [
+    "idea-seed-miner",
+    "reproduction-fallback-planner",
+    "result-reproducer"
+   ],
+   "produces": [
+    "idea_lineage_graph",
+    "idea_portfolio",
+    "mutant_candidates"
+   ],
+   "consumes": [
+    "analogy_candidates",
+    "comparison_mode",
+    "gap_ledger",
+    "idea_mode_constraints",
+    "source_repro_report",
+    "weakness_map"
+   ],
+   "feedback_reads": [],
+   "external_inputs": [
+    "external: code exemplars for mutation",
+    "external: resource envelope (compute, time, budget)"
+   ]
+  },
+  {
+   "name": "idea-ranker",
+   "stage": "04-innovation",
+   "description": "Use when candidates have novelty and feasibility evidence and must be ordered for human decision. Trigger before the selection gate; hard user constraints are filters here, not preferences.",
+   "consolidates": [
+    "idea-ranker"
+   ],
+   "depends_on": [
+    "idea-evaluator",
+    "idea-portfolio-generator",
+    "literature-provider-manager",
+    "reproduction-fallback-planner"
+   ],
+   "produces": [
+    "idea_pareto_front",
+    "ranked_ideas",
+    "ranking_rationale"
+   ],
+   "consumes": [
+    "comparison_mode",
+    "coverage_report",
+    "feasibility_report",
+    "idea_portfolio",
+    "novelty_report"
+   ],
+   "feedback_reads": [],
+   "external_inputs": [
+    "external: user priorities and weightings"
+   ]
+  },
+  {
+   "name": "idea-seed-miner",
+   "stage": "04-innovation",
+   "description": "Use when contributions are decomposed, the literature is mapped and coverage is measured, and you need innovation seeds grounded in evidence rather than in guessing. Runs three mining modes — weakness, gap and analogy. Trigger as the first stage of the innovation engine.",
+   "consolidates": [
+    "assumption-weakness-miner",
+    "novelty-gap-miner",
+    "cross-domain-analogy-miner"
+   ],
+   "depends_on": [
+    "citation-resolver",
+    "literature-provider-manager",
+    "literature-search",
+    "paper-model-builder",
+    "result-reproducer"
+   ],
+   "produces": [
+    "analogy_candidates",
+    "assumption_tests",
+    "gap_evidence",
+    "gap_ledger",
+    "weakness_map"
+   ],
+   "consumes": [
+    "citation_clusters",
+    "contribution_atoms",
+    "coverage_report",
+    "literature_candidates",
+    "method_dependency_graph",
+    "paper_model",
+    "source_repro_report"
+   ],
+   "feedback_reads": [],
+   "external_inputs": [
+    "external: target venue",
+    "external: tool and domain catalog source"
+   ]
+  },
+  {
+   "name": "integrity-auditor",
+   "stage": "07-analysis",
+   "description": "Use before any result is allowed to become a claim, and when repeated trials must be aggregated into an honest keep-or-kill decision. Trigger on every analysis output.",
+   "consolidates": [
+    "statistical-integrity-auditor",
+    "result-meta-analyzer"
+   ],
+   "depends_on": [
+    "data-analyst",
+    "experiment-runner",
+    "research-blueprint-compiler"
+   ],
+   "produces": [
+    "meta_analysis",
+    "meta_analysis_decision",
+    "stats_audit"
+   ],
+   "consumes": [
+    "analysis_code",
+    "analysis_results",
+    "experiment_ledger",
+    "experiment_specs"
+   ],
+   "feedback_reads": [],
+   "external_inputs": [
+    "external: keep/kill decision criteria"
+   ]
+  },
+  {
+   "name": "literature-provider-manager",
+   "stage": "02-evidence",
+   "description": "Use before any literature search, novelty check or citation resolution. Manages providers, quota and credentials, and measures how much of the relevant literature was actually reachable. Trigger whenever a skill is about to assert that no prior work exists.",
+   "consolidates": [
+    "literature-provider-manager"
+   ],
+   "depends_on": [],
+   "produces": [
+    "coverage_report",
+    "provider_registry",
+    "quota_ledger"
+   ],
+   "consumes": [],
+   "feedback_reads": [],
+   "external_inputs": [
+    "external: domain and recency scope",
+    "external: provider credentials and contact email for polite pools",
+    "external: run-level quota and cost budget"
+   ]
+  },
+  {
+   "name": "literature-search",
+   "stage": "02-evidence",
+   "description": "Use when related work must be retrieved for a topic, claim or candidate idea, or when the user needs a comparative view of competing systems rather than a list of papers. Trigger after provider registration, never before.",
+   "consolidates": [
+    "literature-search",
+    "paper-library-connector",
+    "research-landscape-builder"
+   ],
+   "depends_on": [
+    "literature-provider-manager",
+    "paper-model-builder"
+   ],
+   "produces": [
+    "benchmark_matrix",
+    "landscape_report",
+    "library_hits",
+    "library_note_links",
+    "literature_candidates",
+    "literature_retrieval_log",
+    "literature_search_plan",
+    "system_matrix"
+   ],
+   "consumes": [
+    "coverage_report",
+    "paper_model",
+    "provider_registry"
+   ],
+   "feedback_reads": [],
+   "external_inputs": [
+    "external: landscape topic",
+    "external: library query",
+    "external: literature search objective",
+    "external: paper context for library lookup",
+    "external: personal library connector configuration",
+    "external: recency and time constraints",
+    "external: tool and domain catalog source"
+   ]
+  },
+  {
+   "name": "manuscript-builder",
+   "stage": "08-writing",
+   "description": "Use when evidence is locked and the paper must be built — first its central argument, then prose written against that argument and the evidence behind it. Trigger only after evidence lock.",
+   "consolidates": [
+    "manuscript-spine-builder",
+    "paper-drafter"
+   ],
+   "depends_on": [
+    "citation-resolver",
+    "claim-evidence-graph",
+    "finding-memory",
+    "integrity-auditor",
+    "reproduction-fallback-planner",
+    "user-feedback-gate"
+   ],
+   "produces": [
+    "draft_manifest",
+    "figure_plan",
+    "manuscript_draft",
+    "manuscript_pdf",
+    "manuscript_spine"
+   ],
+   "consumes": [
+    "bibliography",
+    "boundary_conditions",
+    "comparison_mode",
+    "evidence_graph",
+    "findings",
+    "meta_analysis",
+    "negative_findings",
+    "selected_direction"
+   ],
+   "feedback_reads": [
+    "selected_figure"
+   ],
+   "external_inputs": [
+    "external: target venue",
+    "external: target venue template (LaTeX/Word style)"
+   ]
+  },
+  {
+   "name": "paper-ingest",
+   "stage": "01-intake",
+   "description": "Use as the first action on any new paper locator. Fetches the source, normalizes text, extracts assets and falls back to visual reading when layout defeats text extraction. Trigger before any parsing or reasoning about the paper's content.",
+   "consolidates": [
+    "paper-ingest",
+    "paper-html-visual-reader"
+   ],
+   "depends_on": [],
+   "produces": [
+    "layout_warnings",
+    "locator_map",
+    "normalized_text",
+    "paper_assets",
+    "paper_source_file",
+    "source_manifest",
+    "visual_notes"
+   ],
+   "consumes": [],
+   "feedback_reads": [],
+   "external_inputs": [
+    "external: paper locator (URL/PDF/HTML/DOI/arXiv/local path)",
+    "external: rendered page images",
+    "external: supplementary URLs or files"
+   ]
+  },
+  {
+   "name": "paper-model-builder",
+   "stage": "01-intake",
+   "description": "Use immediately after ingestion to turn normalized text into a structured PaperModel and to isolate the paper's contributions into independently attackable atoms. Trigger before literature expansion or weakness mining.",
+   "consolidates": [
+    "paper-structure-parser",
+    "contribution-decomposer"
+   ],
+   "depends_on": [
+    "paper-ingest"
+   ],
+   "produces": [
+    "contribution_atoms",
+    "figure_table_index",
+    "method_dependency_graph",
+    "paper_model",
+    "section_map"
+   ],
+   "consumes": [
+    "locator_map",
+    "normalized_text"
+   ],
+   "feedback_reads": [],
+   "external_inputs": []
+  },
+  {
+   "name": "project-repo-manager",
+   "stage": "00-runtime",
+   "description": "Use at project start and at every milestone. Trigger to create the quest repository, pin sources, route ideas to branches and preserve failed paths.",
+   "consolidates": [
+    "project-repo-manager"
+   ],
+   "depends_on": [],
+   "produces": [
+    "branch_map",
+    "checkpoint_metadata",
+    "quest_repo"
+   ],
+   "consumes": [],
+   "feedback_reads": [],
+   "external_inputs": [
+    "external: paper locator (URL/PDF/HTML/DOI/arXiv/local path)",
+    "external: project intent statement",
+    "external: workspace and retention policy"
+   ]
+  },
+  {
+   "name": "release-gate",
+   "stage": "11-release",
+   "description": "Use when the project claims to be finished. Trigger to verify every gate, package the deliverables, and refuse release while any critical gate remains open.",
+   "consolidates": [
+    "release-gate-exporter"
+   ],
+   "depends_on": [
+    "citation-resolver",
+    "claim-citation-auditor",
+    "deck-factory",
+    "experiment-runner",
+    "finding-memory",
+    "integrity-auditor",
+    "manuscript-builder",
+    "reproduction-fallback-planner",
+    "result-reproducer",
+    "review-simulator"
+   ],
+   "produces": [
+    "release_bundle",
+    "release_manifest",
+    "release_report"
+   ],
+   "consumes": [
+    "artifact_manifest",
+    "bibliography",
+    "citation_audit",
+    "claim_audit",
+    "comparison_mode",
+    "defense_deck",
+    "finding_memory_graph",
+    "findings",
+    "integrity_gate",
+    "manuscript_draft",
+    "provenance_log",
+    "review_report",
+    "source_repro_report",
+    "stats_audit",
+    "submission_blockers"
+   ],
+   "feedback_reads": [
+    "progress_state"
+   ],
+   "external_inputs": []
+  },
+  {
+   "name": "reproduction-fallback-planner",
+   "stage": "03-reproduction",
+   "description": "Use immediately after result-reproducer, before ideation. Converts the achieved reproduction level into the comparative claims and innovation modes that remain admissible. Trigger whenever RL is established or re-established.",
+   "consolidates": [
+    "reproduction-fallback-planner"
+   ],
+   "depends_on": [
+    "result-reproducer"
+   ],
+   "produces": [
+    "comparison_mode",
+    "fallback_decision_log",
+    "idea_mode_constraints"
+   ],
+   "consumes": [
+    "baseline_license_risk",
+    "repro_failure_taxonomy",
+    "source_repro_metrics",
+    "source_repro_report"
+   ],
+   "feedback_reads": [],
+   "external_inputs": [
+    "external: resource envelope",
+    "external: user risk tolerance and target venue"
+   ]
+  },
+  {
+   "name": "research-blueprint-compiler",
+   "stage": "05-planning",
+   "description": "Use when a direction has been selected and must become an executable plan: stages, budgets, acceptance criteria, falsifiable experiment specifications and the ablations that isolate the claimed mechanism. Trigger immediately after selection.",
+   "consolidates": [
+    "research-blueprint-compiler",
+    "experiment-spec-author",
+    "ablation-and-counterfactual-planner"
+   ],
+   "depends_on": [
+    "reproduction-fallback-planner",
+    "result-reproducer",
+    "user-feedback-gate"
+   ],
+   "produces": [
+    "acceptance_criteria",
+    "blueprint_dag",
+    "experiment_specs",
+    "research_blueprint"
+   ],
+   "consumes": [
+    "baseline_assets",
+    "comparison_mode",
+    "selected_direction",
+    "source_repro_report"
+   ],
+   "feedback_reads": [],
+   "external_inputs": [
+    "external: candidate method description",
+    "external: hypothesis under test",
+    "external: resource envelope (compute, time, budget)"
+   ]
+  },
+  {
+   "name": "research-eval-harness",
+   "stage": "12-meta",
+   "description": "Use when the ResearchForge system itself must be measured against a task suite. Trigger before and after any change to the innovation engine or to a skill.",
+   "consolidates": [
+    "research-eval-harness"
+   ],
+   "depends_on": [
+    "evaluator-builder",
+    "retrospective-benchmark-builder"
+   ],
+   "produces": [
+    "eval_failure_taxonomy",
+    "eval_runs",
+    "eval_scorecard"
+   ],
+   "consumes": [
+    "evaluator_code",
+    "retro_benchmark",
+    "retro_benchmark_report"
+   ],
+   "feedback_reads": [],
+   "external_inputs": [
+    "external: evaluation task suite",
+    "external: skill version under evaluation"
+   ]
+  },
+  {
+   "name": "researchforge-orchestrator",
+   "stage": "00-runtime",
+   "description": "Use when the user supplies a paper and wants the full paper-to-innovation-to-manuscript run. Owns the state machine, enforces reproduction before ideation, supervises budget and pace, and stops at the human selection gate in guided mode.",
+   "consolidates": [
+    "researchforge-orchestrator",
+    "research-progress-controller"
+   ],
+   "depends_on": [
+    "claim-evidence-graph",
+    "idea-portfolio-generator",
+    "idea-ranker",
+    "paper-model-builder",
+    "release-gate",
+    "reproduction-fallback-planner",
+    "research-blueprint-compiler",
+    "user-feedback-gate"
+   ],
+   "produces": [
+    "progress_state",
+    "research_state"
+   ],
+   "consumes": [
+    "comparison_mode",
+    "evidence_graph",
+    "idea_portfolio",
+    "paper_model",
+    "ranked_ideas",
+    "release_bundle",
+    "release_manifest",
+    "release_report",
+    "research_blueprint",
+    "selected_direction"
+   ],
+   "feedback_reads": [],
+   "external_inputs": [
+    "external: budget and cost policy",
+    "external: live runtime state feed",
+    "external: paper locator (URL/PDF/HTML/DOI/arXiv/local path)",
+    "external: resource envelope (compute, time, budget)",
+    "external: run mode (guided|auto|analysis-only)",
+    "external: user feedback on ranked ideas"
+   ]
+  },
+  {
+   "name": "result-reproducer",
+   "stage": "03-reproduction",
+   "description": "Use when any published result must be reproduced and graded — the source paper's own results before ideation, a comparison baseline after a direction is selected, or a substitute baseline. Trigger on state EVIDENCE_EXPANDED for the source paper; nothing downstream may assume a working code base until this runs.",
+   "consolidates": [
+    "baseline-repo-finder",
+    "source-result-reproducer",
+    "baseline-reproduction-auditor"
+   ],
+   "depends_on": [
+    "paper-model-builder",
+    "sandbox-provisioner"
+   ],
+   "produces": [
+    "baseline_assets",
+    "baseline_deviation_log",
+    "baseline_license_risk",
+    "baseline_metrics",
+    "baseline_repo_rankings",
+    "repro_failure_taxonomy",
+    "reproduction_report",
+    "source_repro_metrics",
+    "source_repro_plan",
+    "source_repro_report"
+   ],
+   "consumes": [
+    "contribution_atoms",
+    "paper_model",
+    "sandbox_manifest"
+   ],
+   "feedback_reads": [
+    "comparison_mode"
+   ],
+   "external_inputs": [
+    "external: preferred research direction hint",
+    "external: reproduction tolerance policy",
+    "external: resource envelope (compute, time, budget)",
+    "external: resource envelope (wall-clock cap, compute class, cost cap)"
+   ]
+  },
+  {
+   "name": "retrospective-benchmark-builder",
+   "stage": "12-meta",
+   "description": "Use when you need to measure whether ResearchForge produces good research directions. Builds a benchmark from older seed papers paired with the follow-up work actually published afterwards. Trigger before tuning the innovation engine.",
+   "consolidates": [
+    "retrospective-benchmark-builder"
+   ],
+   "depends_on": [
+    "citation-resolver",
+    "literature-provider-manager"
+   ],
+   "produces": [
+    "retro_benchmark",
+    "retro_benchmark_report"
+   ],
+   "consumes": [
+    "citation_graph",
+    "coverage_report",
+    "provider_registry"
+   ],
+   "feedback_reads": [],
+   "external_inputs": [
+    "external: domain scope and venue list",
+    "external: seed time window and evaluation window"
+   ]
+  },
+  {
+   "name": "review-simulator",
+   "stage": "08-writing",
+   "description": "Use when a draft needs adversarial pre-submission review against a target venue, and when reviews — simulated or real — must be triaged into a prioritized revision and response plan. Trigger after the citation audit passes.",
+   "consolidates": [
+    "journal-fit-reviewer",
+    "rebuttal-and-revision-planner"
+   ],
+   "depends_on": [
+    "claim-citation-auditor",
+    "claim-evidence-graph",
+    "experiment-runner",
+    "manuscript-builder"
+   ],
+   "produces": [
+    "response_to_reviewers",
+    "review_report",
+    "review_triage",
+    "revision_experiment_plan",
+    "revision_matrix"
+   ],
+   "consumes": [
+    "citation_audit",
+    "evidence_graph",
+    "experiment_ledger",
+    "integrity_gate",
+    "manuscript_draft",
+    "manuscript_spine"
+   ],
+   "feedback_reads": [],
+   "external_inputs": [
+    "external: resource envelope (compute, time, budget)",
+    "external: target venue"
+   ]
+  },
+  {
+   "name": "sandbox-provisioner",
+   "stage": "00-runtime",
+   "description": "Use before any generated or untrusted code executes, and whenever an evaluator must stay invisible to the agent being evaluated. Trigger at run setup, not at first execution.",
+   "consolidates": [
+    "sandbox-provisioner"
+   ],
+   "depends_on": [],
+   "produces": [
+    "environment_lock",
+    "sandbox_container_config",
+    "sandbox_manifest"
+   ],
+   "consumes": [],
+   "feedback_reads": [],
+   "external_inputs": [
+    "external: sandbox security profile"
+   ]
+  },
+  {
+   "name": "skill-evolution-manager",
+   "stage": "12-meta",
+   "description": "Use when accumulated run traces suggest a skill should change, or when the package's own structure and contracts need auditing. Trigger offline only; a candidate edit is promoted only if it improves held-out performance without regressing any guardrail.",
+   "consolidates": [
+    "skill-package-auditor",
+    "skill-evolution-manager"
+   ],
+   "depends_on": [
+    "research-eval-harness"
+   ],
+   "produces": [],
+   "consumes": [
+    "eval_failure_taxonomy",
+    "eval_runs",
+    "eval_scorecard"
+   ],
+   "feedback_reads": [],
+   "external_inputs": [
+    "external: held-out evaluation suite",
+    "external: skill catalog source",
+    "external: skill version under evaluation",
+    "external: skills directory path"
+   ]
+  },
+  {
+   "name": "user-feedback-gate",
+   "stage": "04-innovation",
+   "description": "Use when ranked directions are ready and the human must choose, merge, constrain or reject before expensive work begins. Trigger in guided mode always; in auto mode, record an autonomous decision artifact instead.",
+   "consolidates": [
+    "user-feedback-gate"
+   ],
+   "depends_on": [
+    "idea-ranker",
+    "reproduction-fallback-planner"
+   ],
+   "produces": [
+    "decision_log",
+    "selected_direction"
+   ],
+   "consumes": [
+    "comparison_mode",
+    "idea_pareto_front",
+    "ranked_ideas",
+    "ranking_rationale"
+   ],
+   "feedback_reads": [],
+   "external_inputs": [
+    "external: user feedback on ranked ideas"
+   ]
+  }
+ ]
+}

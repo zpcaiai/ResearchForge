@@ -1,0 +1,57 @@
+{
+ "1911.04252": {
+  "title": "Self-training with Noisy Student improves ImageNet classification",
+  "published": "2019-11-11",
+  "mechanism": "self-training in which an equal-or-larger student is trained on pseudo-labels produced by a teacher, with noise injected into the student during learning",
+  "abstract_source": "hf://papers/1911.04252/metadata.json (summary field)"
+ },
+ "1903.07785": {
+  "title": "Cloze-driven Pretraining of Self-attention Networks",
+  "published": "2019-03-19",
+  "mechanism": "a bi-directional transformer pretrained by cloze-style reconstruction: each word is ablated and predicted from the remaining text",
+  "abstract_source": "hf://papers/1903.07785/metadata.json (summary field)"
+ },
+ "2003.10580": {
+  "title": "Meta Pseudo Labels",
+  "published": "2020-03-23",
+  "mechanism": "the teacher is no longer fixed: it is adapted by feedback from the student's performance on the labelled set, so pseudo-label generation is itself learned rather than frozen",
+  "abstract_source": "hf://papers/2003.10580/metadata.json (summary field)"
+ },
+ "2203.05482": {
+  "title": "Model soups: averaging weights of multiple fine-tuned models improves accuracy without increasing inference time",
+  "published": "2022-03-10",
+  "mechanism": "average the weights of models fine-tuned under different hyperparameter configurations, which lie in a single low-error basin, instead of selecting the single best and discarding the rest",
+  "abstract_source": "hf://papers/2203.05482/metadata.json (summary field)"
+ },
+ "2205.01917": {
+  "title": "CoCa: Contrastive Captioners are Image-Text Foundation Models",
+  "published": "2022-05-04",
+  "mechanism": "one image-text encoder-decoder pretrained jointly with a contrastive loss and a captioning loss, with cross-attention omitted in the first half of the decoder so those layers encode unimodal text",
+  "abstract_source": "hf://papers/2205.01917/metadata.json (summary field)"
+ },
+ "2010.05006": {
+  "title": "Automated Concatenation of Embeddings for Structured Prediction",
+  "published": "2020-10-10",
+  "mechanism": "search automatically over which pretrained embeddings to concatenate for a given task, instead of fixing the concatenation by hand",
+  "abstract_source": "hf://papers/2010.05006/metadata.json (summary field)"
+ },
+ "2006.01563": {
+  "title": null,
+  "title_note": "not resolvable through the channels available here; the Papers With Code model name is used in its place",
+  "published": "2020-06-02",
+  "mechanism": "extend the BERT input with neighbouring sentences and combine the several predictions each token then receives by contextual majority voting",
+  "abstract_source": "https://arxiv.org/abs/2006.01563v2 (abstract, fetched)"
+ },
+ "2010.01057": {
+  "title": "LUKE: Deep Contextualized Entity Representations with Entity-aware Self-attention",
+  "published": "2020-10-02",
+  "mechanism": "treat entities as first-class tokens alongside words, pretrain by masking both, and extend self-attention with an entity-aware term that conditions on whether each token is a word or an entity",
+  "abstract_source": "https://arxiv.org/abs/2010.01057 (abstract, fetched)"
+ },
+ "2003.08237": {
+  "title": "Fixing the train-test resolution discrepancy: FixEfficientNet",
+  "published": "2020-03-18",
+  "mechanism": "correct the mismatch between the image resolution seen in training and the one seen at test time, rather than changing the architecture or the training data",
+  "abstract_source": "https://arxiv.org/abs/2003.08237 (abstract, fetched)"
+ }
+}

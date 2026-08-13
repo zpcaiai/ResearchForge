@@ -1,0 +1,234 @@
+{
+  "version": "0.3.0",
+  "from_version": "0.2.0",
+  "merged": {
+    "paper-ingest": {
+      "parts": [
+        "paper-ingest",
+        "paper-html-visual-reader"
+      ],
+      "rationale": "Visual reading is the fallback branch of ingestion, not a separate capability. It fires on the same input, produces artifacts only ingestion's consumers read, and choosing between the two paths is a decision inside one act of reading the paper."
+    },
+    "paper-model-builder": {
+      "parts": [
+        "paper-structure-parser",
+        "contribution-decomposer"
+      ],
+      "rationale": "Parsing structure and decomposing contributions were never independently useful. The section map exists so contributions can be located; the contribution atoms exist so weaknesses can be mined. Nothing consumed one without the other."
+    },
+    "claim-evidence-graph": {
+      "parts": [
+        "paper-claim-evidence-graph"
+      ],
+      "rationale": "Kept whole. This is the truth backbone of the architecture and the store outlives every stage that writes to it."
+    },
+    "literature-provider-manager": {
+      "parts": [
+        "literature-provider-manager"
+      ],
+      "rationale": "Kept whole and deliberately separate from search. Coverage is the guarantee behind every novelty claim; folding it into the searcher would let the searcher grade its own homework."
+    },
+    "literature-search": {
+      "parts": [
+        "literature-search",
+        "paper-library-connector",
+        "research-landscape-builder"
+      ],
+      "rationale": "Personal-library lookup is one more retrieval provider. Landscape building is a rendering of a completed search, not a separate investigation — it consumed search output and produced only documents."
+    },
+    "citation-resolver": {
+      "parts": [
+        "citation-resolver",
+        "citation-neighborhood-miner"
+      ],
+      "rationale": "Neighbourhood mining is what you do with resolved references, using the same provider clients and the same identity resolution. Separating them duplicated the hardest part — deciding when two references are the same work."
+    },
+    "result-reproducer": {
+      "parts": [
+        "baseline-repo-finder",
+        "source-result-reproducer",
+        "baseline-reproduction-auditor"
+      ],
+      "rationale": "v0.2.0 had three skills doing one thing at three points in the pipeline: find the repo, reproduce the source paper, reproduce the comparison baseline. The mechanism is identical — the only difference is which paper you point it at, which the ReproductionLevel schema already carries as `target_kind`. Three copies of the hardest procedure in the system was three places for it to drift."
+    },
+    "reproduction-fallback-planner": {
+      "parts": [
+        "reproduction-fallback-planner"
+      ],
+      "rationale": "Kept deliberately separate from the reproducer. Measurement and policy must not live in the same skill, or the thing that decides what counts as success is also the thing that reports it."
+    },
+    "idea-seed-miner": {
+      "parts": [
+        "assumption-weakness-miner",
+        "novelty-gap-miner",
+        "cross-domain-analogy-miner"
+      ],
+      "rationale": "Three mining passes emitting the same kind of object into the same consumer. Keeping them apart made the portfolio generator depend on three skills to get one list, and let a run silently skip a mode without anything noticing. As modes of one skill, mode coverage becomes checkable."
+    },
+    "idea-portfolio-generator": {
+      "parts": [
+        "idea-portfolio-generator",
+        "genetic-idea-mutator"
+      ],
+      "rationale": "Mutation is a generation strategy, not a separate stage. It read the same seeds, wrote the same candidate objects, and existed mainly to be run again after the first batch clustered too tightly."
+    },
+    "idea-evaluator": {
+      "parts": [
+        "novelty-verifier",
+        "feasibility-estimator"
+      ],
+      "rationale": "Novelty and feasibility were always computed together and consumed together by exactly one skill. Merging keeps them adjacent while preserving the thing that matters: they remain two scores, never collapsed into one."
+    },
+    "idea-ranker": {
+      "parts": [
+        "idea-ranker"
+      ],
+      "rationale": "Kept whole. Ranking is a pure function over evaluations, independently testable, and the one place where a subtle scoring error changes the entire project's direction."
+    },
+    "user-feedback-gate": {
+      "parts": [
+        "user-feedback-gate"
+      ],
+      "rationale": "Kept whole. This is the highest-value skill in the package and the reason the system is not just another autonomous idea generator."
+    },
+    "research-blueprint-compiler": {
+      "parts": [
+        "research-blueprint-compiler",
+        "experiment-spec-author",
+        "ablation-and-counterfactual-planner"
+      ],
+      "rationale": "The blueprint, the experiment specs and the ablation plan were one act of planning split three ways. An experiment spec without its ablations cannot support a causal claim, so the two were never separable in practice."
+    },
+    "evaluator-builder": {
+      "parts": [
+        "metric-and-hidden-evaluator-builder"
+      ],
+      "rationale": "Kept whole and separate on purpose. This is a security boundary, not a planning step; merging it into the blueprint would put the grader inside the thing it grades."
+    },
+    "sandbox-provisioner": {
+      "parts": [
+        "sandbox-provisioner"
+      ],
+      "rationale": "Kept whole. It is provisioned in phase 0 — reproduction needs it long before any experiment spec exists — which is precisely why v0.2.0's edge from experiment specs into the sandbox was a genuine design error."
+    },
+    "codebase-scaffolder": {
+      "parts": [
+        "codebase-scaffolder",
+        "debug-and-repair"
+      ],
+      "rationale": "Scaffolding and repair are one loop. The debugger only ever read code the scaffolder wrote, and separating them made 'stop trying' a decision with no owner."
+    },
+    "experiment-runner": {
+      "parts": [
+        "experiment-tree-search",
+        "experiment-ledger",
+        "artifact-provenance"
+      ],
+      "rationale": "The ledger and the provenance log were two views of one append-only event stream, and the tree search was the only thing writing to them. Three skills, one write path — which is exactly how a metric ends up in a paper without a matching ledger entry."
+    },
+    "data-analyst": {
+      "parts": [
+        "data-prep-agent",
+        "data-analysis-agent"
+      ],
+      "rationale": "Preparation and analysis shared the leakage question, which is the only question either of them gets seriously wrong. Splitting them let a leak be introduced in one skill and go unnoticed in the other."
+    },
+    "integrity-auditor": {
+      "parts": [
+        "statistical-integrity-auditor",
+        "result-meta-analyzer"
+      ],
+      "rationale": "Meta-analysis is where selective reporting actually happens, so the skill that aggregates repeated trials and the skill that detects cherry-picking belong in the same place with the same view of the raw runs."
+    },
+    "finding-memory": {
+      "parts": [
+        "finding-memory-manager",
+        "negative-result-curator"
+      ],
+      "rationale": "Negative results are findings with a tag, not a separate store. Separating them was how negative results got curated into a file nobody read."
+    },
+    "manuscript-builder": {
+      "parts": [
+        "manuscript-spine-builder",
+        "paper-drafter"
+      ],
+      "rationale": "The spine exists solely to constrain the draft. Two skills meant the draft could be regenerated without regenerating the spine it was supposed to obey, which is precisely how evidence-free prose gets in."
+    },
+    "claim-citation-auditor": {
+      "parts": [
+        "claim-citation-auditor",
+        "paper-quality-integrity-gate"
+      ],
+      "rationale": "The integrity gate was reading the citation auditor's output and re-deciding the same question. One skill, one verdict, with the gate as its final step — because two skills meant two thresholds and the lower one wins."
+    },
+    "review-simulator": {
+      "parts": [
+        "journal-fit-reviewer",
+        "rebuttal-and-revision-planner"
+      ],
+      "rationale": "Generating a review and acting on one are the same competence pointed in two directions, and they were the only consumers of each other's output."
+    },
+    "figure-factory": {
+      "parts": [
+        "figure-storyboard",
+        "scientific-figure-generator",
+        "vector-figure-reconstructor",
+        "editable-svg-refiner"
+      ],
+      "rationale": "Four skills for one pipeline: decide what the figure must say, draw it, and make it editable — where two of the four ('refine to editable SVG' and 'reconstruct a raster into vectors') were the same job reached from different inputs."
+    },
+    "deck-factory": {
+      "parts": [
+        "defense-ppt-storyline",
+        "paper-to-ppt-evidence-mapper",
+        "defense-ppt-generator"
+      ],
+      "rationale": "Evidence mapping was a step between storyline and generation with no other consumer. Three skills made it possible to generate a deck that skipped the mapping entirely — which is the exact failure the mapping exists to prevent."
+    },
+    "project-repo-manager": {
+      "parts": [
+        "project-repo-manager"
+      ],
+      "rationale": "Kept whole. Long-horizon projects live or die on their ability to resume, and the repository is where that lives."
+    },
+    "release-gate": {
+      "parts": [
+        "release-gate-exporter"
+      ],
+      "rationale": "Kept whole. This is the last place a fabricated number can be caught."
+    },
+    "researchforge-orchestrator": {
+      "parts": [
+        "researchforge-orchestrator",
+        "research-progress-controller"
+      ],
+      "rationale": "Budget supervision, stall detection and resume semantics are the state machine's own mechanics. As a separate skill they described a controller with no authority over the thing it was controlling."
+    },
+    "retrospective-benchmark-builder": {
+      "parts": [
+        "retrospective-benchmark-builder"
+      ],
+      "rationale": "Kept whole, on the offline maintenance entry point."
+    },
+    "research-eval-harness": {
+      "parts": [
+        "research-eval-harness"
+      ],
+      "rationale": "Kept whole, on the offline maintenance entry point."
+    },
+    "skill-evolution-manager": {
+      "parts": [
+        "skill-package-auditor",
+        "skill-evolution-manager"
+      ],
+      "rationale": "Auditing the package and proposing edits to it are the same loop; the audit existed to feed the evolution manager and had no other consumer."
+    }
+  },
+  "deleted": {
+    "multi-agent-research-team": "69 words, orphan, unreachable in v0.1.0. Role decomposition across agents is a runtime implementation detail of the orchestrator, not a research capability with its own contract.",
+    "tool-composition-planner": "62 words, orphan. Overlapped tool-skill-router while saying less.",
+    "tool-skill-router": "Premature abstraction: selecting from a large tool catalog only becomes a real problem once there is a large tool catalog. Fold back in when one exists.",
+    "model-provider-router": "Premature abstraction: routing across providers is worth a skill when there are two providers with different data policies. Until then it is a config file.",
+    "domain-skill-loader": "Premature abstraction: pinning domain skill versions matters once domain skills exist."
+  }
+}

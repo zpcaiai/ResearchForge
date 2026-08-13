@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ReproductionLevel",
+  "type": "object",
+  "required": ["target_paper_id","level","assessed_at_run_id","claim_comparisons","failure_codes","environment_digest","timebox_seconds","timebox_exhausted"],
+  "properties": {
+    "target_paper_id": {"type":"string"},
+    "target_kind": {"enum":["source_paper","comparison_baseline","substitute_baseline"],"default":"source_paper"},
+    "level": {"enum":["RL0","RL1","RL2","RL3","RL4"],
+      "description":"RL0 not reproduced; RL1 code runs; RL2 reduced-scale smoke match; RL3 >=1 headline cell within tolerance; RL4 majority of primary table within tolerance"},
+    "level_rationale": {"type":"string"},
+    "assessed_at_run_id": {"type":"string"},
+    "reduced_scale": {"type":"boolean","description":"true if any supporting run was reduced-scale; forbids RL3/RL4"},
+    "claim_comparisons": {
+      "type":"array",
+      "description":"Paired reported-vs-measured records. Required for any level above RL1.",
+      "items":{
+        "type":"object",
+        "required":["claim_id","reported_value","measured_value","tolerance","verdict","run_id"],
+        "properties":{
+          "claim_id":{"type":"string"},
+          "locator":{"type":"string","description":"Where in the source paper the reported value was read"},
+          "metric":{"type":"string"},
+          "reported_value":{"type":["number","string"]},
+          "measured_value":{"type":["number","string","null"]},
+          "tolerance":{"type":"object","properties":{"kind":{"enum":["relative","absolute","reported_variance"]},"value":{"type":"number"}}},
+          "verdict":{"enum":["MATCH","DIVERGE","NOT_ATTEMPTED","METRIC_MISMATCH"]},
+          "run_id":{"type":"string"}
+        }
+      }
+    },
+    "failure_codes": {
+      "type":"array",
+      "items":{"enum":["NO_CODE","DEPENDENCY_UNRESOLVABLE","HARDWARE_UNAVAILABLE","DATA_UNAVAILABLE","DATA_ACCESS_GATED","CHECKPOINT_MISSING","UNDOCUMENTED_PREPROCESSING","CONFIG_AMBIGUOUS","NONDETERMINISM","METRIC_DEFINITION_MISMATCH","NUMBERS_DIVERGE","TIMEBOX_EXCEEDED","LICENSE_BLOCKED"]}
+    },
+    "remediation_candidates": {"type":"array","items":{"type":"object","properties":{"failure_code":{"type":"string"},"action":{"type":"string"},"est_cost_usd":{"type":"number"},"est_hours":{"type":"number"}}}},
+    "environment_digest": {"type":"string"},
+    "timebox_seconds": {"type":"number"},
+    "timebox_exhausted": {"type":"boolean"},
+    "human_reviewed": {"type":"boolean","default":false}
+  }
+}

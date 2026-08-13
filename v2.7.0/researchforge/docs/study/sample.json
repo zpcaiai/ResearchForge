@@ -1,0 +1,170 @@
+{
+ "seed": 20260811,
+ "n": 20,
+ "frame_size": 188,
+ "frame_kind": "HF Daily Papers, 13 dates at 7-day steps across 2025-Q4",
+ "known_bias": "curated feed -> over-represents visible work -> rates are UPPER BOUNDS",
+ "measurable_here": "RL0 and RL1 only (no GPU, no dataset egress)",
+ "sample": [
+  {
+   "date": "2025-10-07",
+   "arxiv_id": "2510.03561",
+   "title": "Reactive Transformer (RxT)",
+   "github_repo": "https://github.com/RxAI-dev/rxlm",
+   "github_stars": 25,
+   "sample_index": 1
+  },
+  {
+   "date": "2025-10-14",
+   "arxiv_id": "2510.11391",
+   "title": "DocReward",
+   "github_repo": null,
+   "github_stars": 0,
+   "sample_index": 2
+  },
+  {
+   "date": "2025-11-11",
+   "arxiv_id": "2511.06194",
+   "title": "NURBGen",
+   "github_repo": "https://github.com/SadilKhan/NURBGen",
+   "github_stars": 0,
+   "sample_index": 3
+  },
+  {
+   "date": "2025-10-21",
+   "arxiv_id": "2510.17509",
+   "title": "Annotation-Efficient Universal Honesty Alignment",
+   "github_repo": "https://github.com/Trustworthy-Information-Access/Annotation-Efficient-Universal-Honesty-Alignment",
+   "github_stars": 10,
+   "sample_index": 4
+  },
+  {
+   "date": "2025-12-23",
+   "arxiv_id": "2512.18184",
+   "title": "Is There a Better Source Distribution than Gaussian",
+   "github_repo": "https://github.com/kwanseokk/SourceFM",
+   "github_stars": 17,
+   "sample_index": 5
+  },
+  {
+   "date": "2025-11-11",
+   "arxiv_id": "2511.06209",
+   "title": "Reasoning with Confidence",
+   "github_repo": null,
+   "github_stars": 0,
+   "sample_index": 6
+  },
+  {
+   "date": "2025-11-11",
+   "arxiv_id": "2511.07327",
+   "title": "IterResearch",
+   "github_repo": null,
+   "github_stars": 0,
+   "sample_index": 7
+  },
+  {
+   "date": "2025-12-23",
+   "arxiv_id": "2512.19432",
+   "title": "MobileWorld",
+   "github_repo": "https://github.com/Tongyi-MAI/MobileWorld",
+   "github_stars": 254,
+   "sample_index": 8
+  },
+  {
+   "date": "2025-10-14",
+   "arxiv_id": "2510.09285",
+   "title": "Spotlight on Token Perception for Multimodal RL",
+   "github_repo": "https://github.com/huaixuheqing/VPPO-RL",
+   "github_stars": 73,
+   "sample_index": 9
+  },
+  {
+   "date": "2025-11-25",
+   "arxiv_id": "2511.13288",
+   "title": "Multi-Agent Deep Research with M-GRPO",
+   "github_repo": "https://github.com/AQ-MedAI/MrlX",
+   "github_stars": 220,
+   "sample_index": 10
+  },
+  {
+   "date": "2025-11-18",
+   "arxiv_id": "2511.12609",
+   "title": "Uni-MoE-2.0-Omni",
+   "github_repo": "https://github.com/HITsz-TMG/Uni-MoE",
+   "github_stars": 1114,
+   "sample_index": 11
+  },
+  {
+   "date": "2025-12-16",
+   "arxiv_id": "2512.13080",
+   "title": "Spatial-Aware VLA Pretraining",
+   "github_repo": "https://github.com/BeingBeyond/VIPA-VLA",
+   "github_stars": 26,
+   "sample_index": 12
+  },
+  {
+   "date": "2025-11-11",
+   "arxiv_id": "2511.07250",
+   "title": "MVU-Eval",
+   "github_repo": "https://github.com/NJU-LINK/MVU-Eval",
+   "github_stars": 18,
+   "sample_index": 13
+  },
+  {
+   "date": "2025-12-16",
+   "arxiv_id": "2512.13604",
+   "title": "LongVie 2",
+   "github_repo": "https://github.com/Vchitect/LongVie",
+   "github_stars": 335,
+   "sample_index": 14
+  },
+  {
+   "date": "2025-11-04",
+   "arxiv_id": "2511.01678",
+   "title": "UniLumos",
+   "github_repo": "https://github.com/alibaba-damo-academy/Lumos-Custom",
+   "github_stars": 220,
+   "sample_index": 15
+  },
+  {
+   "date": "2025-10-14",
+   "arxiv_id": "2510.11696",
+   "title": "QeRL: Quantization-enhanced Reinforcement Learning for LLMs",
+   "github_repo": "https://github.com/NVlabs/QeRL",
+   "github_stars": 513,
+   "sample_index": 16
+  },
+  {
+   "date": "2025-10-28",
+   "arxiv_id": "2510.23052",
+   "title": "Knocking-Heads Attention",
+   "github_repo": null,
+   "github_stars": 0,
+   "sample_index": 17
+  },
+  {
+   "date": "2025-10-14",
+   "arxiv_id": "2510.11652",
+   "title": "ACADREASON",
+   "github_repo": "https://github.com/OPPO-PersonalAI/Acadreason-benchmark",
+   "github_stars": 3,
+   "sample_index": 18
+  },
+  {
+   "date": "2025-12-16",
+   "arxiv_id": "2512.09636",
+   "title": "MentraSuite",
+   "github_repo": "https://github.com/elsa66666/MentraSuite",
+   "github_stars": 17,
+   "sample_index": 19
+  },
+  {
+   "date": "2025-11-25",
+   "arxiv_id": "2511.17803",
+   "title": "Pillar-0",
+   "github_repo": "https://github.com/YalaLab/pillar-pretrain",
+   "github_stars": 39,
+   "sample_index": 20
+  }
+ ]
+}

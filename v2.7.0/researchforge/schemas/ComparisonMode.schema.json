@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ComparisonMode",
+  "type": "object",
+  "required": ["mode","derived_from_level","admissible_idea_modes","disclosure_required"],
+  "properties": {
+    "mode": {"enum":["CM_MEASURED","CM_RELATIVE","CM_REPORTED","CM_NONE"],
+      "description":"CM_MEASURED: compare against locally measured baseline. CM_RELATIVE: relative improvement under identical env only. CM_REPORTED: compare against published numbers with mandatory disclosure. CM_NONE: no comparative performance claim admissible."},
+    "derived_from_level": {"enum":["RL0","RL1","RL2","RL3","RL4"]},
+    "derived_from_report_id": {"type":"string"},
+    "admissible_idea_modes": {
+      "type":"array",
+      "items":{"enum":["extend_generalize","replace_simplify","combine_transfer","explain_diagnose","benchmark_evaluate","systemize"]},
+      "description":"At RL0 this reduces to explain_diagnose and benchmark_evaluate — the project pivots, it does not halt."
+    },
+    "forbidden_claim_patterns": {"type":"array","items":{"type":"string"}},
+    "disclosure_required": {
+      "type":"object",
+      "required":["required"],
+      "properties":{
+        "required":{"type":"boolean"},
+        "text_template":{"type":"string"},
+        "must_appear_in":{"type":"array","items":{"type":"string"}}
+      }
+    },
+    "substitute_baseline": {"type":["object","null"],"properties":{"identifier":{"type":"string"},"own_level":{"enum":["RL0","RL1","RL2","RL3","RL4"]},"caveat":{"type":"string"}}},
+    "approved_by": {"type":["string","null"],"description":"human approver in guided mode; null with autonomous_decision_id in auto mode"},
+    "autonomous_decision_id": {"type":["string","null"]}
+  }
+}

@@ -1,0 +1,44 @@
+CoCa (finetuned) ~ https://arxiv.org/abs/2205.01917v2 ~ 91.0
+Model soups (BASIC-L) ~ https://arxiv.org/abs/2203.05482v3 ~ 90.98
+Model soups (ViT-G/14) ~ https://arxiv.org/abs/2203.05482v3 ~ 90.94
+DaViT-G ~ https://arxiv.org/abs/2204.03645v1 ~ 90.4
+DaViT-H ~ https://arxiv.org/abs/2204.03645v1 ~ 90.2
+Meta Pseudo Labels (EfficientNet-L2) ~ https://arxiv.org/abs/2003.10580v4 ~ 90.2
+SwinV2-G ~ https://arxiv.org/abs/2111.09883v2 ~ 90.17
+MAWS (ViT-6.5B) ~ https://arxiv.org/abs/2303.13496v3 ~ 90.1
+Florence-CoSwin-H ~ https://arxiv.org/abs/2111.11432v1 ~ 90.05
+Meta Pseudo Labels (EfficientNet-B6-Wide) ~ https://arxiv.org/abs/2003.10580v4 ~ 90
+RevCol-H ~ https://arxiv.org/abs/2212.11696v3 ~ 90.0
+MAWS (ViT-2B) ~ https://arxiv.org/abs/2303.13496v3 ~ 89.8
+EVA ~ https://arxiv.org/abs/2211.07636v2 ~ 89.7
+M3I Pre-training (InternImage-H) ~ https://arxiv.org/abs/2211.09807v2 ~ 89.6
+ViT-L/16 (384res, distilled from ViT-22B) ~ https://arxiv.org/abs/2302.05442v1 ~ 89.6
+InternImage-H ~ https://arxiv.org/abs/2211.05778v4 ~ 89.6
+MaxViT-XL (512res, JFT) ~ https://arxiv.org/abs/2204.01697v4 ~ 89.53
+AIMv2-3B (448 res) ~ https://arxiv.org/abs/2411.14402v1 ~ 89.5
+MAWS (ViT-H) ~ https://arxiv.org/abs/2303.13496v3 ~ 89.5
+MaxViT-L (512res, JFT) ~ https://arxiv.org/abs/2204.01697v4 ~ 89.41
+NFNet-F4+ ~ https://arxiv.org/abs/2102.06171v1 ~ 89.2
+MOAT-4 22K+1K ~ https://arxiv.org/abs/2210.01820v2 ~ 89.1
+FD (CLIP ViT-L-336) ~ https://arxiv.org/abs/2205.14141v3 ~ 89.0
+Last Layer Tuning with Newton Step (ViT-G/14) ~ https://arxiv.org/abs/2211.13403v1 ~ 88.9
+TokenLearner L/8 (24+11) ~ https://arxiv.org/abs/2106.11297v4 ~ 88.87
+MaxViT-B (512res, JFT) ~ https://arxiv.org/abs/2204.01697v4 ~ 88.82
+MAWS (ViT-L) ~ https://arxiv.org/abs/2303.13496v3 ~ 88.8
+MViTv2-H (512 res, ImageNet-21k pretrain) ~ https://arxiv.org/abs/2112.01526v2 ~ 88.8
+MaxViT-XL (512res, 21K) ~ https://arxiv.org/abs/2204.01697v4 ~ 88.7
+ALIGN (EfficientNet-L2) ~ https://arxiv.org/abs/2102.05918v2 ~ 88.64
+EfficientNet-L2-475 (SAM) ~ https://arxiv.org/abs/2010.01412v3 ~ 88.61
+ViT-B/16 ~ https://arxiv.org/abs/2302.05442v1 ~ 88.6
+BEiT-L (ViT; ImageNet-22K pretrain) ~ https://arxiv.org/abs/2106.08254v2 ~ 88.60
+SWAG (ViT H/14) ~ https://arxiv.org/abs/2201.08371v2 ~ 88.6
+ViT-H/14 ~ https://arxiv.org/abs/2010.11929v2 ~ 88.55
+CoAtNet-3 @384 ~ https://arxiv.org/abs/2106.04803v2 ~ 88.52
+OpenCLIP ViT-H/14 ~ https://arxiv.org/abs/2212.07143v2 ~ 88.5
+FixEfficientNet-L2 ~ https://arxiv.org/abs/2003.08237v5 ~ 88.5
+ViTAE-H + MAE (448) ~ https://arxiv.org/abs/2202.10108v2 ~ 88.5
+MViTv2-L (384 res, ImageNet-21k pretrain) ~ https://arxiv.org/abs/2112.01526v2 ~ 88.4
+NoisyStudent (EfficientNet-L2) ~ https://arxiv.org/abs/1911.04252v4 ~ 88.4
+Top-k DiffSortNets (EfficientNet-L2) ~ https://arxiv.org/abs/2206.07290v1 ~ 88.37
+V-MoE-H/14 (Every-2) ~ https://arxiv.org/abs/2106.05974v1 ~ 88.36
+BiT-L (ResNet) ~ https://arxiv.org/abs/1912.11370v3 ~ 87.54

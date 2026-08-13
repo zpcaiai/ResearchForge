@@ -1,0 +1,57 @@
+Turing NLR v5 XXL 5.4B (fine-tuned) | null | Matched | 92.6
+UnitedSynT5 (3B) | https://arxiv.org/abs/2412.09263v2 | Matched | 92.6
+T5 | https://arxiv.org/abs/1911.03437v5 | Matched | 92.0
+T5-XXL 11B (fine-tuned) | https://arxiv.org/abs/1910.10683v4 | Matched | 92.0
+T5-3B | https://arxiv.org/abs/1910.10683v4 | Matched | 91.4
+ALBERT | https://arxiv.org/abs/1909.11942v6 | Matched | 91.3
+DeBERTa (large) | https://arxiv.org/abs/2006.03654v6 | Matched | 91.1
+Adv-RoBERTa ensemble | https://arxiv.org/abs/1908.04577v3 | Matched | 91.1
+RoBERTa | https://arxiv.org/abs/1907.11692v1 | Matched | 90.8
+XLNet (single model) | https://arxiv.org/abs/1906.08237v2 | Matched | 90.8
+RoBERTa-large 355M (MLP quantized vector-wise, fine-tuned) | https://arxiv.org/abs/2208.07339v2 | Matched | 90.2
+T5-Large | https://arxiv.org/abs/1910.10683v4 | Matched | 89.9
+PSQ (Chen et al., 2020) | https://arxiv.org/abs/2010.14298v1 | Matched | 89.9
+UnitedSynT5 (335M) | https://arxiv.org/abs/2412.09263v2 | Matched | 89.8
+ERNIE 2.0 Large | https://arxiv.org/abs/1907.12412v2 | Matched | 88.7
+SpanBERT | https://arxiv.org/abs/1907.10529v3 | Matched | 88.1
+BERT-Large | https://arxiv.org/abs/2105.03824v4 | Matched | 88
+ASA + RoBERTa | https://arxiv.org/abs/2206.12608v3 | Matched | 88
+MT-DNN-ensemble | http://arxiv.org/abs/1904.09482v1 | Matched | 87.9
+Q-BERT (Shen et al., 2020) | https://arxiv.org/abs/1909.05840v2 | Matched | 87.8
+Snorkel MeTaL (ensemble) | http://arxiv.org/abs/1810.02840v2 | Matched | 87.6
+BigBird | https://arxiv.org/abs/2007.14062v2 | Matched | 87.5
+T5-Base | https://arxiv.org/abs/1910.10683v4 | Matched | 87.1
+MT-DNN | https://arxiv.org/abs/1901.11504v2 | Matched | 86.7
+BERT-LARGE | https://arxiv.org/abs/1810.04805v2 | Matched | 86.7
+RealFormer | https://arxiv.org/abs/2012.11747v3 | Matched | 86.28
+gMLP-large | https://arxiv.org/abs/2105.08050v2 | Matched | 86.2
+ERNIE 2.0 Base | https://arxiv.org/abs/1907.12412v2 | Matched | 86.1
+Q8BERT (Zafrir et al., 2019) | https://arxiv.org/abs/1910.06188v2 | Matched | 85.6
+ASA + BERT-base | https://arxiv.org/abs/2206.12608v3 | Matched | 85
+TinyBERT-6 67M | https://arxiv.org/abs/1909.10351v5 | Matched | 84.6
+ELC-BERT-base 98M (zero init) | https://arxiv.org/abs/2311.02265v2 | Matched | 84.4
+24hBERT | https://arxiv.org/abs/2104.07705v2 | Matched | 84.4
+ERNIE | https://arxiv.org/abs/1905.07129v3 | Matched | 84.0
+Charformer-Tall | https://arxiv.org/abs/2106.12672v3 | Matched | 83.7
+LTG-BERT-base 98M | https://arxiv.org/abs/2311.02265v2 | Matched | 83
+TinyBERT-4 14.5M | https://arxiv.org/abs/1909.10351v5 | Matched | 82.5
+T5-Small | https://arxiv.org/abs/1910.10683v4 | Matched | 82.4
+MFAE | https://epubs.siam.org/doi/10.1137/1.9781611976236.26 | Matched | 82.31
+Finetuned Transformer LM | null | Matched | 82.1
+SqueezeBERT | https://arxiv.org/abs/2006.11316v1 | Matched | 82.0
+GPST(unsupervised generative syntactic LM) | https://arxiv.org/abs/2403.08293v3 | Matched | 81.8
+ELC-BERT-small 24M | https://arxiv.org/abs/2311.02265v2 | Matched | 79.2
+LTG-BERT-small 24M | https://arxiv.org/abs/2311.02265v2 | Matched | 78
+FNet-Large | https://arxiv.org/abs/2105.03824v4 | Matched | 78
+aESIM | http://arxiv.org/abs/1812.01840v2 | Matched | 73.9
+T5-Large 738M | https://arxiv.org/abs/2304.14402v3 | Matched | 72.4
+Multi-task BiLSTM + Attn | http://arxiv.org/abs/1804.07461v3 | Matched | 72.2
+Stacked Bi-LSTMs (shortcut connections, max-pooling) | http://arxiv.org/abs/1811.00706v1 | Matched | 71.4
+GenSen | http://arxiv.org/abs/1804.00079v1 | Matched | 71.4
+Bi-LSTM sentence encoder (max-pooling) | http://arxiv.org/abs/1811.00706v1 | Matched | 70.7
+Stacked Bi-LSTMs (shortcut connections, max-pooling, attention) | http://arxiv.org/abs/1811.00706v1 | Matched | 70.7
+SWEM-max | http://arxiv.org/abs/1805.09843v1 | Matched | 68.2
+LaMini-GPT 1.5B | https://arxiv.org/abs/2304.14402v3 | Matched | 67.5
+LaMini-F-T5 783M | https://arxiv.org/abs/2304.14402v3 | Matched | 61.4
+LaMini-T5 738M | https://arxiv.org/abs/2304.14402v3 | Matched | 54.7
+GPT-2-XL 1.5B | https://arxiv.org/abs/2304.14402v3 | Matched | 36.5

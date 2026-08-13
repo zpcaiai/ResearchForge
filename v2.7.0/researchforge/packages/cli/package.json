@@ -1,0 +1,3 @@
+{ "name": "@researchforge/cli", "version": "0.3.0", "type": "module",
+  "bin": { "researchforge": "./dist/cli.js" },
+  "dependencies": { "@researchforge/contracts": "0.3.0" } }

@@ -1,0 +1,1338 @@
+{
+ "rule_file": "FRAME_RULE.md",
+ "dates": [
+  "2025-10-07",
+  "2025-10-14",
+  "2025-10-21",
+  "2025-10-28",
+  "2025-11-04",
+  "2025-11-11",
+  "2025-11-18",
+  "2025-11-25",
+  "2025-12-02",
+  "2025-12-09",
+  "2025-12-16",
+  "2025-12-23",
+  "2025-12-30"
+ ],
+ "pool_rows": 188,
+ "frame_size": 188,
+ "repos": [
+  {
+   "date": "2025-10-07",
+   "arxiv_id": "2510.04618",
+   "title": "Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models",
+   "github_repo": "https://github.com/ace-agent/ace",
+   "github_stars": 1252
+  },
+  {
+   "date": "2025-10-07",
+   "arxiv_id": "2510.05096",
+   "title": "Paper2Video: Automatic Video Generation from Scientific Papers",
+   "github_repo": "https://github.com/showlab/Paper2Video",
+   "github_stars": 2347
+  },
+  {
+   "date": "2025-10-07",
+   "arxiv_id": "2510.05034",
+   "title": "Video-LMM Post-Training: A Deep Dive into Video Reasoning",
+   "github_repo": "https://github.com/yunlong10/Awesome-Video-LMM-Post-Training",
+   "github_stars": 298
+  },
+  {
+   "date": "2025-10-07",
+   "arxiv_id": "2510.03632",
+   "title": "MITS: Enhanced Tree Search Reasoning for LLMs via Pointwise Mutual Information",
+   "github_repo": "https://github.com/plusnli/MITS",
+   "github_stars": 2
+  },
+  {
+   "date": "2025-10-07",
+   "arxiv_id": "2510.05094",
+   "title": "VChain: Chain-of-Visual-Thought for Reasoning in Video Generation",
+   "github_repo": "https://github.com/Eyeline-Labs/VChain",
+   "github_stars": 120
+  },
+  {
+   "date": "2025-10-07",
+   "arxiv_id": "2510.04800",
+   "title": "Hybrid Architectures for Language Models",
+   "github_repo": null,
+   "github_stars": 0
+  },
+  {
+   "date": "2025-10-07",
+   "arxiv_id": "2510.05025",
+   "title": "Imperceptible Jailbreaking against Large Language Models",
+   "github_repo": "https://github.com/sail-sg/imperceptible-jailbreaks",
+   "github_stars": 25
+  },
+  {
+   "date": "2025-10-07",
+   "arxiv_id": "2510.03871",
+   "title": "Optimal Scaling Needs Optimal Norm",
+   "github_repo": "https://github.com/SDLAML/disco",
+   "github_stars": 16
+  },
+  {
+   "date": "2025-10-07",
+   "arxiv_id": "2510.03264",
+   "title": "Front-Loading Reasoning: Pretraining and Post-Training Data",
+   "github_repo": null,
+   "github_stars": 0
+  },
+  {
+   "date": "2025-10-07",
+   "arxiv_id": "2510.03561",
+   "title": "Reactive Transformer (RxT)",
+   "github_repo": "https://github.com/RxAI-dev/rxlm",
+   "github_stars": 25
+  },
+  {
+   "date": "2025-10-07",
+   "arxiv_id": "2510.00499",
+   "title": "MOSS-Speech: Speech-to-Speech Models Without Text Guidance",
+   "github_repo": "https://github.com/OpenMOSS/MOSS-Speech",
+   "github_stars": 139
+  },
+  {
+   "date": "2025-10-07",
+   "arxiv_id": "2510.04290",
+   "title": "ChronoEdit: Temporal Reasoning for Image Editing",
+   "github_repo": "https://github.com/nv-tlabs/ChronoEdit",
+   "github_stars": 702
+  },
+  {
+   "date": "2025-10-07",
+   "arxiv_id": "2510.05091",
+   "title": "Factuality Matters: Image Generation and Editing Meet Structured Visuals",
+   "github_repo": "https://github.com/zhuole1025/Structured-Visuals",
+   "github_stars": 37
+  },
+  {
+   "date": "2025-10-07",
+   "arxiv_id": "2510.03528",
+   "title": "Fine-Tuning on Noisy Instructions",
+   "github_repo": "https://github.com/aajrami/finetuning-on-noisy-instructions",
+   "github_stars": 0
+  },
+  {
+   "date": "2025-10-07",
+   "arxiv_id": "2510.04996",
+   "title": "Reinforce-Ada: Adaptive Sampling for Reinforce-Style LLM Training",
+   "github_repo": "https://github.com/RLHFlow/Reinforce-Ada",
+   "github_stars": 97
+  },
+  {
+   "date": "2025-10-14",
+   "arxiv_id": "2510.11696",
+   "title": "QeRL: Quantization-enhanced Reinforcement Learning for LLMs",
+   "github_repo": "https://github.com/NVlabs/QeRL",
+   "github_stars": 513
+  },
+  {
+   "date": "2025-10-14",
+   "arxiv_id": "2510.11690",
+   "title": "Diffusion Transformers with Representation Autoencoders",
+   "github_repo": "https://github.com/bytetriper/RAE",
+   "github_stars": 1988
+  },
+  {
+   "date": "2025-10-14",
+   "arxiv_id": "2510.11052",
+   "title": "Latent Refinement Decoding",
+   "github_repo": null,
+   "github_stars": 0
+  },
+  {
+   "date": "2025-10-14",
+   "arxiv_id": "2510.10689",
+   "title": "OmniVideoBench",
+   "github_repo": "https://github.com/NJU-LINK/OmniVideoBench",
+   "github_stars": 78
+  },
+  {
+   "date": "2025-10-14",
+   "arxiv_id": "2510.11341",
+   "title": "InternSVG",
+   "github_repo": "https://github.com/hmwang2002/InternSVG",
+   "github_stars": 122
+  },
+  {
+   "date": "2025-10-14",
+   "arxiv_id": "2510.10201",
+   "title": "RLFR: Extending RL for LLMs with Flow Environment",
+   "github_repo": "https://github.com/Jinghaoleven/RLFR",
+   "github_stars": 48
+  },
+  {
+   "date": "2025-10-14",
+   "arxiv_id": "2510.09285",
+   "title": "Spotlight on Token Perception for Multimodal RL",
+   "github_repo": "https://github.com/huaixuheqing/VPPO-RL",
+   "github_stars": 73
+  },
+  {
+   "date": "2025-10-14",
+   "arxiv_id": "2510.11701",
+   "title": "Demystifying Reinforcement Learning in Agentic Reasoning",
+   "github_repo": null,
+   "github_stars": 0
+  },
+  {
+   "date": "2025-10-14",
+   "arxiv_id": "2510.10395",
+   "title": "AVoCaDO: Audiovisual Video Captioner",
+   "github_repo": "https://github.com/AVoCaDO-Captioner/AVoCaDO",
+   "github_stars": 38
+  },
+  {
+   "date": "2025-10-14",
+   "arxiv_id": "2510.11712",
+   "title": "DiT360: Panoramic Image Generation",
+   "github_repo": "https://github.com/Insta360-Research-Team/DiT360",
+   "github_stars": 280
+  },
+  {
+   "date": "2025-10-14",
+   "arxiv_id": "2510.11652",
+   "title": "ACADREASON",
+   "github_repo": "https://github.com/OPPO-PersonalAI/Acadreason-benchmark",
+   "github_stars": 3
+  },
+  {
+   "date": "2025-10-14",
+   "arxiv_id": "2510.10197",
+   "title": "Don't Just Fine-tune the Agent, Tune the Environment",
+   "github_repo": null,
+   "github_stars": 0
+  },
+  {
+   "date": "2025-10-14",
+   "arxiv_id": "2510.10666",
+   "title": "BrowserAgent",
+   "github_repo": "https://github.com/TIGER-AI-Lab/BrowserAgent",
+   "github_stars": 36
+  },
+  {
+   "date": "2025-10-14",
+   "arxiv_id": "2510.11391",
+   "title": "DocReward",
+   "github_repo": null,
+   "github_stars": 0
+  },
+  {
+   "date": "2025-10-21",
+   "arxiv_id": "2510.16872",
+   "title": "DeepAnalyze: Agentic LLMs for Autonomous Data Science",
+   "github_repo": "https://github.com/ruc-datalab/DeepAnalyze",
+   "github_stars": 4505
+  },
+  {
+   "date": "2025-10-21",
+   "arxiv_id": "2510.17269",
+   "title": "FineVision: Open Data Is All You Need",
+   "github_repo": null,
+   "github_stars": 0
+  },
+  {
+   "date": "2025-10-21",
+   "arxiv_id": "2510.17800",
+   "title": "Glyph: Scaling Context Windows via Visual-Text Compression",
+   "github_repo": "https://github.com/thu-coai/Glyph",
+   "github_stars": 597
+  },
+  {
+   "date": "2025-10-21",
+   "arxiv_id": "2510.17681",
+   "title": "PICABench",
+   "github_repo": "https://github.com/Andrew0613/PICABench",
+   "github_stars": 39
+  },
+  {
+   "date": "2025-10-21",
+   "arxiv_id": "2510.16333",
+   "title": "RL makes MLLMs see better than SFT",
+   "github_repo": "https://github.com/june-page/pivot",
+   "github_stars": 0
+  },
+  {
+   "date": "2025-10-21",
+   "arxiv_id": "2510.17715",
+   "title": "QueST",
+   "github_repo": null,
+   "github_stars": 0
+  },
+  {
+   "date": "2025-10-21",
+   "arxiv_id": "2510.17354",
+   "title": "Mixed-Modal Retrieval for Universal RAG",
+   "github_repo": "https://github.com/SnowNation101/Nyx",
+   "github_stars": 14
+  },
+  {
+   "date": "2025-10-21",
+   "arxiv_id": "2510.16449",
+   "title": "TrajSelector",
+   "github_repo": null,
+   "github_stars": 0
+  },
+  {
+   "date": "2025-10-21",
+   "arxiv_id": "2510.15346",
+   "title": "When to Ensemble",
+   "github_repo": null,
+   "github_stars": 0
+  },
+  {
+   "date": "2025-10-21",
+   "arxiv_id": "2510.17960",
+   "title": "AION-1: Omnimodal Foundation Model for Astronomical Sciences",
+   "github_repo": "https://github.com/PolymathicAI/AION",
+   "github_stars": 144
+  },
+  {
+   "date": "2025-10-21",
+   "arxiv_id": "2510.15821",
+   "title": "Chronos-2: From Univariate to Universal Forecasting",
+   "github_repo": "https://github.com/amazon-science/chronos-forecasting",
+   "github_stars": 5695
+  },
+  {
+   "date": "2025-10-21",
+   "arxiv_id": "2510.17509",
+   "title": "Annotation-Efficient Universal Honesty Alignment",
+   "github_repo": "https://github.com/Trustworthy-Information-Access/Annotation-Efficient-Universal-Honesty-Alignment",
+   "github_stars": 10
+  },
+  {
+   "date": "2025-10-21",
+   "arxiv_id": "2510.16888",
+   "title": "Uniworld-V2",
+   "github_repo": "https://github.com/PKU-YuanGroup/UniWorld-V2",
+   "github_stars": 295
+  },
+  {
+   "date": "2025-10-21",
+   "arxiv_id": "2510.16751",
+   "title": "Visual Autoregressive Models Beat Diffusion on Inference Time Scaling",
+   "github_repo": null,
+   "github_stars": 0
+  },
+  {
+   "date": "2025-10-21",
+   "arxiv_id": "2510.17795",
+   "title": "Executable Knowledge Graphs for Replicating AI Research",
+   "github_repo": "https://github.com/zjunlp/xKG",
+   "github_stars": 17
+  },
+  {
+   "date": "2025-10-28",
+   "arxiv_id": "2510.23607",
+   "title": "Concerto: Joint 2D-3D Self-Supervised Learning",
+   "github_repo": "https://github.com/Pointcept/Concerto",
+   "github_stars": 533
+  },
+  {
+   "date": "2025-10-28",
+   "arxiv_id": "2510.23564",
+   "title": "ReCode: Unify Plan and Action",
+   "github_repo": "https://github.com/FoundationAgents/ReCode",
+   "github_stars": 562
+  },
+  {
+   "date": "2025-10-28",
+   "arxiv_id": "2510.23587",
+   "title": "A Survey of Data Agents",
+   "github_repo": "https://github.com/HKUSTDial/awesome-data-agents",
+   "github_stars": 689
+  },
+  {
+   "date": "2025-10-28",
+   "arxiv_id": "2510.23588",
+   "title": "FARMER: Flow AutoRegressive Transformer over Pixels",
+   "github_repo": null,
+   "github_stars": 0
+  },
+  {
+   "date": "2025-10-28",
+   "arxiv_id": "2510.23581",
+   "title": "Lookahead Anchoring",
+   "github_repo": "https://github.com/j0seo/lookahead-anchoring",
+   "github_stars": 15
+  },
+  {
+   "date": "2025-10-28",
+   "arxiv_id": "2510.22706",
+   "title": "IGGT: Instance-Grounded Geometry Transformer",
+   "github_repo": "https://github.com/lifuguan/IGGT_official",
+   "github_stars": 430
+  },
+  {
+   "date": "2025-10-28",
+   "arxiv_id": "2510.21817",
+   "title": "VITA-E",
+   "github_repo": "https://github.com/Tencent/VITA",
+   "github_stars": 164
+  },
+  {
+   "date": "2025-10-28",
+   "arxiv_id": "2510.22200",
+   "title": "LongCat-Video Technical Report",
+   "github_repo": "https://github.com/meituan-longcat/LongCat-Video",
+   "github_stars": 6703
+  },
+  {
+   "date": "2025-10-28",
+   "arxiv_id": "2510.22201",
+   "title": "ACG: Action Coherence Guidance",
+   "github_repo": "https://github.com/DAVIAN-Robotics/ACG",
+   "github_stars": 85
+  },
+  {
+   "date": "2025-10-28",
+   "arxiv_id": "2510.22733",
+   "title": "E^2Rank",
+   "github_repo": "https://github.com/Alibaba-NLP/E2Rank",
+   "github_stars": 59
+  },
+  {
+   "date": "2025-10-28",
+   "arxiv_id": "2510.22521",
+   "title": "Open Multimodal RAG Factual Image Generation",
+   "github_repo": null,
+   "github_stars": 0
+  },
+  {
+   "date": "2025-10-28",
+   "arxiv_id": "2510.23052",
+   "title": "Knocking-Heads Attention",
+   "github_repo": null,
+   "github_stars": 0
+  },
+  {
+   "date": "2025-10-28",
+   "arxiv_id": "2510.23451",
+   "title": "Omni-Reward",
+   "github_repo": "https://github.com/HongbangYuan/OmniReward",
+   "github_stars": 48
+  },
+  {
+   "date": "2025-10-28",
+   "arxiv_id": "2510.23603",
+   "title": "PixelRefer",
+   "github_repo": "https://github.com/alibaba-damo-academy/PixelRefer",
+   "github_stars": 353
+  },
+  {
+   "date": "2025-10-28",
+   "arxiv_id": "2510.23393",
+   "title": "The Best of N Worlds",
+   "github_repo": null,
+   "github_stars": 0
+  },
+  {
+   "date": "2025-11-04",
+   "arxiv_id": "2510.22115",
+   "title": "Every Activation Boosted",
+   "github_repo": null,
+   "github_stars": 0
+  },
+  {
+   "date": "2025-11-04",
+   "arxiv_id": "2510.27545",
+   "title": "EBT-Policy",
+   "github_repo": null,
+   "github_stars": 0
+  },
+  {
+   "date": "2025-11-04",
+   "arxiv_id": "2511.00062",
+   "title": "World Simulation with Video Foundation Models",
+   "github_repo": "https://github.com/nvidia-cosmos/cosmos-predict2.5",
+   "github_stars": 1344
+  },
+  {
+   "date": "2025-11-04",
+   "arxiv_id": "2511.00086",
+   "title": "Generalizing Test-time Compute-optimal Scaling",
+   "github_repo": null,
+   "github_stars": 0
+  },
+  {
+   "date": "2025-11-04",
+   "arxiv_id": "2511.01295",
+   "title": "UniREditBench",
+   "github_repo": "https://github.com/Maplebb/UniREditBench",
+   "github_stars": 58
+  },
+  {
+   "date": "2025-11-04",
+   "arxiv_id": "2511.01678",
+   "title": "UniLumos",
+   "github_repo": "https://github.com/alibaba-damo-academy/Lumos-Custom",
+   "github_stars": 220
+  },
+  {
+   "date": "2025-11-04",
+   "arxiv_id": "2510.24788",
+   "title": "Underappreciated Power of Vision Models for Graph Structure",
+   "github_repo": "https://github.com/LOGO-CUHKSZ/GraphAbstract",
+   "github_stars": 2
+  },
+  {
+   "date": "2025-11-04",
+   "arxiv_id": "2511.01266",
+   "title": "MotionStream",
+   "github_repo": "https://github.com/alex4727/motionstream",
+   "github_stars": 576
+  },
+  {
+   "date": "2025-11-04",
+   "arxiv_id": "2511.01163",
+   "title": "ROVER",
+   "github_repo": "https://github.com/cheryyunl/ROVER",
+   "github_stars": 27
+  },
+  {
+   "date": "2025-11-04",
+   "arxiv_id": "2510.24794",
+   "title": "MR-Align",
+   "github_repo": "https://github.com/gudehhh666/MR-ALIGN",
+   "github_stars": 10
+  },
+  {
+   "date": "2025-11-11",
+   "arxiv_id": "2511.03506",
+   "title": "HaluMem",
+   "github_repo": "https://github.com/MemTensor/HaluMem",
+   "github_stars": 151
+  },
+  {
+   "date": "2025-11-11",
+   "arxiv_id": "2511.07327",
+   "title": "IterResearch",
+   "github_repo": null,
+   "github_stars": 0
+  },
+  {
+   "date": "2025-11-11",
+   "arxiv_id": "2511.06307",
+   "title": "DRIVE: Data Curation for RLVR in Competitive Code Generation",
+   "github_repo": "https://github.com/Tencent-Hunyuan/DRIVE-RLVR",
+   "github_stars": 8
+  },
+  {
+   "date": "2025-11-11",
+   "arxiv_id": "2511.06309",
+   "title": "The Station",
+   "github_repo": "https://github.com/dualverse-ai/station",
+   "github_stars": 119
+  },
+  {
+   "date": "2025-11-11",
+   "arxiv_id": "2511.07416",
+   "title": "Robot Learning from a Physical World Model",
+   "github_repo": "https://github.com/PointsCoder/OpenReal2Sim",
+   "github_stars": 237
+  },
+  {
+   "date": "2025-11-11",
+   "arxiv_id": "2511.06876",
+   "title": "Generating an Image From 1,000 Words",
+   "github_repo": "https://github.com/Bria-AI/FIBO",
+   "github_stars": 329
+  },
+  {
+   "date": "2025-11-11",
+   "arxiv_id": "2511.07419",
+   "title": "Routing Manifold Alignment",
+   "github_repo": "https://github.com/tianyi-lab/RoMA",
+   "github_stars": 19
+  },
+  {
+   "date": "2025-11-11",
+   "arxiv_id": "2511.07384",
+   "title": "Teaching PLMs to Think Deeper with Retrofitted Recurrence",
+   "github_repo": "https://github.com/mcleish7/retrofitting-recurrence",
+   "github_stars": 69
+  },
+  {
+   "date": "2025-11-11",
+   "arxiv_id": "2511.07070",
+   "title": "RedOne 2.0",
+   "github_repo": null,
+   "github_stars": 0
+  },
+  {
+   "date": "2025-11-11",
+   "arxiv_id": "2511.06209",
+   "title": "Reasoning with Confidence",
+   "github_repo": null,
+   "github_stars": 0
+  },
+  {
+   "date": "2025-11-11",
+   "arxiv_id": "2511.07317",
+   "title": "RLVE",
+   "github_repo": "https://github.com/Zhiyuan-Zeng/RLVE",
+   "github_stars": 229
+  },
+  {
+   "date": "2025-11-11",
+   "arxiv_id": "2511.07250",
+   "title": "MVU-Eval",
+   "github_repo": "https://github.com/NJU-LINK/MVU-Eval",
+   "github_stars": 18
+  },
+  {
+   "date": "2025-11-11",
+   "arxiv_id": "2511.06411",
+   "title": "SofT-GRPO",
+   "github_repo": "https://github.com/zz1358m/SofT-GRPO-master",
+   "github_stars": 52
+  },
+  {
+   "date": "2025-11-11",
+   "arxiv_id": "2511.07025",
+   "title": "Llama-Embed-Nemotron-8B",
+   "github_repo": null,
+   "github_stars": 0
+  },
+  {
+   "date": "2025-11-11",
+   "arxiv_id": "2511.06449",
+   "title": "FLEX: Continuous Agent Evolution",
+   "github_repo": "https://github.com/GenSI-THUAIR/FLEX",
+   "github_stars": 85
+  },
+  {
+   "date": "2025-11-11",
+   "arxiv_id": "2511.06194",
+   "title": "NURBGen",
+   "github_repo": "https://github.com/SadilKhan/NURBGen",
+   "github_stars": 0
+  },
+  {
+   "date": "2025-11-18",
+   "arxiv_id": "2511.11793",
+   "title": "MiroThinker",
+   "github_repo": "https://github.com/MiroMindAI/MiroThinker",
+   "github_stars": 8369
+  },
+  {
+   "date": "2025-11-18",
+   "arxiv_id": "2511.13254",
+   "title": "Souper-Model",
+   "github_repo": "https://github.com/facebookresearch/llm_souping",
+   "github_stars": 73
+  },
+  {
+   "date": "2025-11-18",
+   "arxiv_id": "2511.13612",
+   "title": "P1: Mastering Physics Olympiads with RL",
+   "github_repo": "https://github.com/PRIME-RL/P1",
+   "github_stars": 89
+  },
+  {
+   "date": "2025-11-18",
+   "arxiv_id": "2511.12609",
+   "title": "Uni-MoE-2.0-Omni",
+   "github_repo": "https://github.com/HITsz-TMG/Uni-MoE",
+   "github_stars": 1114
+  },
+  {
+   "date": "2025-11-18",
+   "arxiv_id": "2511.13647",
+   "title": "Part-X-MLLM",
+   "github_repo": "https://github.com/AiEson/Part-X-MLLM",
+   "github_stars": 119
+  },
+  {
+   "date": "2025-11-18",
+   "arxiv_id": "2511.09611",
+   "title": "MMaDA-Parallel",
+   "github_repo": "https://github.com/tyfeld/MMaDA-Parallel",
+   "github_stars": 306
+  },
+  {
+   "date": "2025-11-18",
+   "arxiv_id": "2511.13720",
+   "title": "Back to Basics: Let Denoising Generative Models Denoise",
+   "github_repo": "https://github.com/LTH14/JiT",
+   "github_stars": 2489
+  },
+  {
+   "date": "2025-11-18",
+   "arxiv_id": "2511.11653",
+   "title": "GroupRank",
+   "github_repo": "https://github.com/AQ-MedAI/Diver",
+   "github_stars": 259
+  },
+  {
+   "date": "2025-11-18",
+   "arxiv_id": "2511.13648",
+   "title": "PhysX-Anything",
+   "github_repo": "https://github.com/ziangcao0312/PhysX-Anything",
+   "github_stars": 918
+  },
+  {
+   "date": "2025-11-18",
+   "arxiv_id": "2511.13704",
+   "title": "TiViBench",
+   "github_repo": "https://github.com/EnVision-Research/TiViBench",
+   "github_stars": 67
+  },
+  {
+   "date": "2025-11-18",
+   "arxiv_id": "2511.12710",
+   "title": "Evolve the Method, Not the Prompts",
+   "github_repo": "https://github.com/dongdongunique/EvoSynth",
+   "github_stars": 58
+  },
+  {
+   "date": "2025-11-18",
+   "arxiv_id": "2511.11332",
+   "title": "UFO^3",
+   "github_repo": null,
+   "github_stars": 0
+  },
+  {
+   "date": "2025-11-18",
+   "arxiv_id": "2511.14659",
+   "title": "NORA-1.5",
+   "github_repo": "https://github.com/declare-lab/nora-1.5",
+   "github_stars": 109
+  },
+  {
+   "date": "2025-11-18",
+   "arxiv_id": "2511.13714",
+   "title": "UnSAMv2",
+   "github_repo": "https://github.com/yujunwei04/UnSAMv2",
+   "github_stars": 84
+  },
+  {
+   "date": "2025-11-18",
+   "arxiv_id": "2511.13655",
+   "title": "OlmoEarth",
+   "github_repo": null,
+   "github_stars": 0
+  },
+  {
+   "date": "2025-11-25",
+   "arxiv_id": "2511.18423",
+   "title": "General Agentic Memory Via Deep Research",
+   "github_repo": "https://github.com/VectorSpaceLab/general-agentic-memory",
+   "github_stars": 859
+  },
+  {
+   "date": "2025-11-25",
+   "arxiv_id": "2511.19304",
+   "title": "AutoEnv",
+   "github_repo": "https://github.com/FoundationAgents/AutoEnv",
+   "github_stars": 67
+  },
+  {
+   "date": "2025-11-25",
+   "arxiv_id": "2511.19365",
+   "title": "DeCo: Frequency-Decoupled Pixel Diffusion",
+   "github_repo": "https://github.com/Zehong-Ma/DeCo",
+   "github_stars": 239
+  },
+  {
+   "date": "2025-11-25",
+   "arxiv_id": "2511.19399",
+   "title": "DR Tulu",
+   "github_repo": "https://github.com/rlresearch/dr-tulu",
+   "github_stars": 693
+  },
+  {
+   "date": "2025-11-25",
+   "arxiv_id": "2511.15567",
+   "title": "Computer-Use Agents as Judges",
+   "github_repo": "https://github.com/showlab/AUI",
+   "github_stars": 45
+  },
+  {
+   "date": "2025-11-25",
+   "arxiv_id": "2511.18050",
+   "title": "UltraFlux",
+   "github_repo": "https://github.com/W2GenAI-Lab/UltraFlux",
+   "github_stars": 146
+  },
+  {
+   "date": "2025-11-25",
+   "arxiv_id": "2511.17006",
+   "title": "Budget-Aware Tool-Use Enables Effective Agent Scaling",
+   "github_repo": null,
+   "github_stars": 0
+  },
+  {
+   "date": "2025-11-25",
+   "arxiv_id": "2511.19401",
+   "title": "In-Video Instructions",
+   "github_repo": "https://github.com/VainF/In-Video-Instructions",
+   "github_stars": 45
+  },
+  {
+   "date": "2025-11-25",
+   "arxiv_id": "2511.19418",
+   "title": "Chain-of-Visual-Thought",
+   "github_repo": "https://github.com/Wakals/CoVT",
+   "github_stars": 390
+  },
+  {
+   "date": "2025-11-25",
+   "arxiv_id": "2511.18870",
+   "title": "HunyuanVideo 1.5 Technical Report",
+   "github_repo": "https://github.com/Tencent-Hunyuan/HunyuanVideo-1.5",
+   "github_stars": 4540
+  },
+  {
+   "date": "2025-11-25",
+   "arxiv_id": "2511.20256",
+   "title": "The Image as Its Own Reward",
+   "github_repo": "https://github.com/showlab/Adv-GRPO",
+   "github_stars": 88
+  },
+  {
+   "date": "2025-11-25",
+   "arxiv_id": "2511.17803",
+   "title": "Pillar-0",
+   "github_repo": "https://github.com/YalaLab/pillar-pretrain",
+   "github_stars": 39
+  },
+  {
+   "date": "2025-11-25",
+   "arxiv_id": "2511.13288",
+   "title": "Multi-Agent Deep Research with M-GRPO",
+   "github_repo": "https://github.com/AQ-MedAI/MrlX",
+   "github_stars": 220
+  },
+  {
+   "date": "2025-11-25",
+   "arxiv_id": "2511.17986",
+   "title": "Plan-X",
+   "github_repo": null,
+   "github_stars": 0
+  },
+  {
+   "date": "2025-12-02",
+   "arxiv_id": "2511.18538",
+   "title": "From Code Foundation Models to Agents and Applications",
+   "github_repo": null,
+   "github_stars": 0
+  },
+  {
+   "date": "2025-12-02",
+   "arxiv_id": "2511.20785",
+   "title": "LongVT",
+   "github_repo": "https://github.com/EvolvingLMMs-Lab/LongVT",
+   "github_stars": 259
+  },
+  {
+   "date": "2025-12-02",
+   "arxiv_id": "2512.01374",
+   "title": "Stabilizing Reinforcement Learning with LLMs",
+   "github_repo": null,
+   "github_stars": 0
+  },
+  {
+   "date": "2025-12-02",
+   "arxiv_id": "2512.01816",
+   "title": "Envision",
+   "github_repo": "https://github.com/opendatalab-raiser/Envision",
+   "github_stars": 32
+  },
+  {
+   "date": "2025-12-02",
+   "arxiv_id": "2512.02014",
+   "title": "TUNA",
+   "github_repo": "https://github.com/wren93/tuna",
+   "github_stars": 93
+  },
+  {
+   "date": "2025-12-02",
+   "arxiv_id": "2511.23404",
+   "title": "LFM2 Technical Report",
+   "github_repo": null,
+   "github_stars": 0
+  },
+  {
+   "date": "2025-12-02",
+   "arxiv_id": "2512.01948",
+   "title": "How Far Are We from Genuinely Useful Deep Research Agents",
+   "github_repo": "https://github.com/OPPO-PersonalAI/FINDER_DEFT",
+   "github_stars": 66
+  },
+  {
+   "date": "2025-12-02",
+   "arxiv_id": "2512.00425",
+   "title": "What about gravity in video generation",
+   "github_repo": "https://github.com/cvlab-stonybrook/NewtonRewards",
+   "github_stars": 16
+  },
+  {
+   "date": "2025-12-02",
+   "arxiv_id": "2512.00590",
+   "title": "Wikontic",
+   "github_repo": "https://github.com/screemix/Wikontic",
+   "github_stars": 89
+  },
+  {
+   "date": "2025-12-02",
+   "arxiv_id": "2511.20649",
+   "title": "Infinity-RoPE",
+   "github_repo": "https://github.com/yesiltepe-hidir/infinity-rope",
+   "github_stars": 94
+  },
+  {
+   "date": "2025-12-02",
+   "arxiv_id": "2511.20614",
+   "title": "The Consistency Critic",
+   "github_repo": "https://github.com/HVision-NKU/ImageCritic",
+   "github_stars": 168
+  },
+  {
+   "date": "2025-12-02",
+   "arxiv_id": "2512.01031",
+   "title": "VLASH",
+   "github_repo": "https://github.com/mit-han-lab/vlash",
+   "github_stars": 477
+  },
+  {
+   "date": "2025-12-02",
+   "arxiv_id": "2511.20549",
+   "title": "Flash-DMD",
+   "github_repo": null,
+   "github_stars": 0
+  },
+  {
+   "date": "2025-12-09",
+   "arxiv_id": "2512.07461",
+   "title": "Native Parallel Reasoner",
+   "github_repo": "https://github.com/bigai-nlco/Native-Parallel-Reasoner",
+   "github_stars": 113
+  },
+  {
+   "date": "2025-12-09",
+   "arxiv_id": "2512.07525",
+   "title": "Beyond Real: Imaginary Extension of RoPE",
+   "github_repo": "https://github.com/OpenMOSS/rope_pp",
+   "github_stars": 33
+  },
+  {
+   "date": "2025-12-09",
+   "arxiv_id": "2512.07469",
+   "title": "Unified Video Editing with Temporal Reasoner",
+   "github_repo": "https://github.com/knightyxp/VideoCoF",
+   "github_stars": 207
+  },
+  {
+   "date": "2025-12-09",
+   "arxiv_id": "2512.07834",
+   "title": "Voxify3D",
+   "github_repo": null,
+   "github_stars": 0
+  },
+  {
+   "date": "2025-12-09",
+   "arxiv_id": "2512.07783",
+   "title": "On the Interplay of Pre-Training, Mid-Training, and RL",
+   "github_repo": "https://github.com/Interplay-LM-Reasoning/Interplay-LM-Reasoning",
+   "github_stars": 166
+  },
+  {
+   "date": "2025-12-09",
+   "arxiv_id": "2512.07778",
+   "title": "Distribution Matching Variational AutoEncoder",
+   "github_repo": "https://github.com/sen-ye/dmvae",
+   "github_stars": 57
+  },
+  {
+   "date": "2025-12-09",
+   "arxiv_id": "2512.06905",
+   "title": "Scaling Zero-Shot Reference-to-Video Generation",
+   "github_repo": "https://github.com/franciszzj/Saber",
+   "github_stars": 76
+  },
+  {
+   "date": "2025-12-09",
+   "arxiv_id": "2512.06065",
+   "title": "EgoEdit",
+   "github_repo": "https://github.com/snap-research/EgoEdit",
+   "github_stars": 155
+  },
+  {
+   "date": "2025-12-09",
+   "arxiv_id": "2512.06749",
+   "title": "DoVer",
+   "github_repo": null,
+   "github_stars": 0
+  },
+  {
+   "date": "2025-12-09",
+   "arxiv_id": "2512.07833",
+   "title": "Relational Visual Similarity",
+   "github_repo": "https://github.com/thaoshibe/relsim",
+   "github_stars": 87
+  },
+  {
+   "date": "2025-12-09",
+   "arxiv_id": "2512.07829",
+   "title": "One Layer Is Enough",
+   "github_repo": null,
+   "github_stars": 0
+  },
+  {
+   "date": "2025-12-09",
+   "arxiv_id": "2512.07584",
+   "title": "LongCat-Image Technical Report",
+   "github_repo": "https://github.com/meituan-longcat/LongCat-Image",
+   "github_stars": 720
+  },
+  {
+   "date": "2025-12-09",
+   "arxiv_id": "2512.07806",
+   "title": "Multi-view Pyramid Transformer",
+   "github_repo": "https://github.com/Gynjn/MVP",
+   "github_stars": 150
+  },
+  {
+   "date": "2025-12-09",
+   "arxiv_id": "2512.06589",
+   "title": "OmniSafeBench-MM",
+   "github_repo": "https://github.com/jiaxiaojunQAQ/OmniSafeBench-MM",
+   "github_stars": 75
+  },
+  {
+   "date": "2025-12-09",
+   "arxiv_id": "2512.08294",
+   "title": "OpenSubject",
+   "github_repo": "https://github.com/LAW1223/OpenSubject",
+   "github_stars": 55
+  },
+  {
+   "date": "2025-12-16",
+   "arxiv_id": "2512.13564",
+   "title": "Memory in the Age of AI Agents",
+   "github_repo": "https://github.com/Shichun-Liu/Agent-Memory-Paper-List",
+   "github_stars": 2305
+  },
+  {
+   "date": "2025-12-16",
+   "arxiv_id": "2512.12967",
+   "title": "QwenLong-L1.5",
+   "github_repo": "https://github.com/Tongyi-Zhiwen/Qwen-Doc",
+   "github_stars": 551
+  },
+  {
+   "date": "2025-12-16",
+   "arxiv_id": "2512.13687",
+   "title": "Towards Scalable Pre-training of Visual Tokenizers",
+   "github_repo": "https://github.com/MiniMax-AI/VTP",
+   "github_stars": 500
+  },
+  {
+   "date": "2025-12-16",
+   "arxiv_id": "2512.13586",
+   "title": "ReFusion",
+   "github_repo": "https://github.com/ML-GSAI/ReFusion",
+   "github_stars": 63
+  },
+  {
+   "date": "2025-12-16",
+   "arxiv_id": "2512.13604",
+   "title": "LongVie 2",
+   "github_repo": "https://github.com/Vchitect/LongVie",
+   "github_stars": 335
+  },
+  {
+   "date": "2025-12-16",
+   "arxiv_id": "2512.13168",
+   "title": "Finch",
+   "github_repo": "https://github.com/FinWorkBench/Finch",
+   "github_stars": 13
+  },
+  {
+   "date": "2025-12-16",
+   "arxiv_id": "2512.12730",
+   "title": "NL2Repo-Bench",
+   "github_repo": "https://github.com/multimodal-art-projection/NL2RepoBench",
+   "github_stars": 153
+  },
+  {
+   "date": "2025-12-16",
+   "arxiv_id": "2512.13313",
+   "title": "KlingAvatar 2.0 Technical Report",
+   "github_repo": null,
+   "github_stars": 0
+  },
+  {
+   "date": "2025-12-16",
+   "arxiv_id": "2512.12602",
+   "title": "Error-Free Linear Attention is a Free Lunch",
+   "github_repo": "https://github.com/declare-lab/EFLA",
+   "github_stars": 76
+  },
+  {
+   "date": "2025-12-16",
+   "arxiv_id": "2512.09636",
+   "title": "MentraSuite",
+   "github_repo": "https://github.com/elsa66666/MentraSuite",
+   "github_stars": 17
+  },
+  {
+   "date": "2025-12-16",
+   "arxiv_id": "2512.10071",
+   "title": "Openpi Comet",
+   "github_repo": "https://github.com/mli0603/openpi-comet",
+   "github_stars": 264
+  },
+  {
+   "date": "2025-12-16",
+   "arxiv_id": "2512.13080",
+   "title": "Spatial-Aware VLA Pretraining",
+   "github_repo": "https://github.com/BeingBeyond/VIPA-VLA",
+   "github_stars": 26
+  },
+  {
+   "date": "2025-12-16",
+   "arxiv_id": "2512.12692",
+   "title": "WebOperator",
+   "github_repo": "https://github.com/kagnlp/WebOperator",
+   "github_stars": 19
+  },
+  {
+   "date": "2025-12-23",
+   "arxiv_id": "2512.16676",
+   "title": "DataFlow",
+   "github_repo": "https://github.com/OpenDCAI/DataFlow",
+   "github_stars": 7291
+  },
+  {
+   "date": "2025-12-23",
+   "arxiv_id": "2512.19693",
+   "title": "The Prism Hypothesis",
+   "github_repo": "https://github.com/WeichenFan/UAE",
+   "github_stars": 210
+  },
+  {
+   "date": "2025-12-23",
+   "arxiv_id": "2512.17650",
+   "title": "Region-Constraint In-Context Generation",
+   "github_repo": "https://github.com/HiDream-ai/ReCo",
+   "github_stars": 175
+  },
+  {
+   "date": "2025-12-23",
+   "arxiv_id": "2512.19678",
+   "title": "WorldWarp",
+   "github_repo": "https://github.com/HyoKong/WorldWarp",
+   "github_stars": 112
+  },
+  {
+   "date": "2025-12-23",
+   "arxiv_id": "2512.19134",
+   "title": "QuCo-RAG",
+   "github_repo": "https://github.com/ZhishanQ/QuCo-RAG",
+   "github_stars": 46
+  },
+  {
+   "date": "2025-12-23",
+   "arxiv_id": "2512.17040",
+   "title": "Infinite-Homography",
+   "github_repo": "https://github.com/emjay73/InfCam",
+   "github_stars": 91
+  },
+  {
+   "date": "2025-12-23",
+   "arxiv_id": "2512.19629",
+   "title": "LoGoPlanner",
+   "github_repo": "https://github.com/InternRobotics/NavDP",
+   "github_stars": 751
+  },
+  {
+   "date": "2025-12-23",
+   "arxiv_id": "2512.18880",
+   "title": "Can LLMs Estimate Student Struggles",
+   "github_repo": "https://github.com/MingLiiii/Difficulty_Alignment",
+   "github_stars": 3
+  },
+  {
+   "date": "2025-12-23",
+   "arxiv_id": "2512.18184",
+   "title": "Is There a Better Source Distribution than Gaussian",
+   "github_repo": "https://github.com/kwanseokk/SourceFM",
+   "github_stars": 17
+  },
+  {
+   "date": "2025-12-23",
+   "arxiv_id": "2512.17385",
+   "title": "UCoder",
+   "github_repo": null,
+   "github_stars": 0
+  },
+  {
+   "date": "2025-12-23",
+   "arxiv_id": "2512.17206",
+   "title": "Reasoning Palette",
+   "github_repo": null,
+   "github_stars": 0
+  },
+  {
+   "date": "2025-12-23",
+   "arxiv_id": "2512.19682",
+   "title": "GenEnv",
+   "github_repo": "https://github.com/Gen-Verse/GenEnv",
+   "github_stars": 64
+  },
+  {
+   "date": "2025-12-23",
+   "arxiv_id": "2512.19539",
+   "title": "StoryMem",
+   "github_repo": "https://github.com/Kevin-thu/StoryMem",
+   "github_stars": 761
+  },
+  {
+   "date": "2025-12-23",
+   "arxiv_id": "2512.16229",
+   "title": "LoPA",
+   "github_repo": "https://github.com/zhijie-group/LoPA",
+   "github_stars": 40
+  },
+  {
+   "date": "2025-12-23",
+   "arxiv_id": "2512.19535",
+   "title": "CASA",
+   "github_repo": "https://github.com/kyutai-labs/casa",
+   "github_stars": 30
+  },
+  {
+   "date": "2025-12-23",
+   "arxiv_id": "2512.19432",
+   "title": "MobileWorld",
+   "github_repo": "https://github.com/Tongyi-MAI/MobileWorld",
+   "github_stars": 254
+  },
+  {
+   "date": "2025-12-30",
+   "arxiv_id": "2512.23447",
+   "title": "Coupling Experts and Routers in Mixture-of-Experts",
+   "github_repo": null,
+   "github_stars": 0
+  },
+  {
+   "date": "2025-12-30",
+   "arxiv_id": "2512.23576",
+   "title": "LiveTalk",
+   "github_repo": "https://github.com/GAIR-NLP/LiveTalk",
+   "github_stars": 331
+  },
+  {
+   "date": "2025-12-30",
+   "arxiv_id": "2512.22096",
+   "title": "Yume-1.5",
+   "github_repo": "https://github.com/stdstu12/YUME",
+   "github_stars": 681
+  },
+  {
+   "date": "2025-12-30",
+   "arxiv_id": "2512.23709",
+   "title": "Stream-DiffVSR",
+   "github_repo": "https://github.com/jamichss/Stream-DiffVSR",
+   "github_stars": 310
+  },
+  {
+   "date": "2025-12-30",
+   "arxiv_id": "2512.22615",
+   "title": "Dream-VL & Dream-VLA",
+   "github_repo": "https://github.com/DreamLM/Dream-VLX",
+   "github_stars": 114
+  },
+  {
+   "date": "2025-12-30",
+   "arxiv_id": "2512.23705",
+   "title": "Diffusion Knows Transparency",
+   "github_repo": "https://github.com/Daniellli/DKT",
+   "github_stars": 209
+  },
+  {
+   "date": "2025-12-30",
+   "arxiv_id": "2512.22323",
+   "title": "SpotEdit",
+   "github_repo": "https://github.com/Biangbiang0321/SpotEdit",
+   "github_stars": 196
+  },
+  {
+   "date": "2025-12-30",
+   "arxiv_id": "2512.22322",
+   "title": "SmartSnap",
+   "github_repo": "https://github.com/TencentYoutuResearch/SmartSnap",
+   "github_stars": 6
+  },
+  {
+   "date": "2025-12-30",
+   "arxiv_id": "2512.23676",
+   "title": "Web World Models",
+   "github_repo": "https://github.com/Princeton-AI2-Lab/Web-World-Models",
+   "github_stars": 92
+  },
+  {
+   "date": "2025-12-30",
+   "arxiv_id": "2512.15560",
+   "title": "GRAN-TED",
+   "github_repo": null,
+   "github_stars": 0
+  },
+  {
+   "date": "2025-12-30",
+   "arxiv_id": "2512.23541",
+   "title": "Act2Goal",
+   "github_repo": null,
+   "github_stars": 0
+  },
+  {
+   "date": "2025-12-30",
+   "arxiv_id": "2512.22234",
+   "title": "DiRL",
+   "github_repo": "https://github.com/OpenMOSS/DiRL",
+   "github_stars": 165
+  },
+  {
+   "date": "2025-12-30",
+   "arxiv_id": "2512.23707",
+   "title": "Training AI Co-Scientists Using Rubric Rewards",
+   "github_repo": null,
+   "github_stars": 0
+  },
+  {
+   "date": "2025-12-30",
+   "arxiv_id": "2512.23647",
+   "title": "Nested Browser-Use Learning",
+   "github_repo": null,
+   "github_stars": 0
+  },
+  {
+   "date": "2025-12-30",
+   "arxiv_id": "2512.22374",
+   "title": "Self-Evaluation Unlocks Any-Step Text-to-Image Generation",
+   "github_repo": null,
+   "github_stars": 0
+  },
+  {
+   "date": "2025-12-30",
+   "arxiv_id": "2512.20927",
+   "title": "Quantile Rendering",
+   "github_repo": null,
+   "github_stars": 0
+  },
+  {
+   "date": "2025-12-30",
+   "arxiv_id": "2512.23646",
+   "title": "OmniAgent",
+   "github_repo": null,
+   "github_stars": 0
+  }
+ ]
+}

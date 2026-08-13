@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ExperimentSpec",
+  "type": "object",
+  "required": [
+    "experiment_id",
+    "hypothesis",
+    "baseline",
+    "candidate",
+    "datasets",
+    "metrics",
+    "seeds",
+    "invalid_conditions"
+  ],
+  "properties": {
+    "experiment_id": {
+      "type": "string"
+    },
+    "hypothesis": {
+      "type": "string"
+    },
+    "baseline": {
+      "type": "object"
+    },
+    "candidate": {
+      "type": "object"
+    },
+    "datasets": {
+      "type": "array"
+    },
+    "metrics": {
+      "type": "array"
+    },
+    "seeds": {
+      "type": "array"
+    },
+    "resources": {
+      "type": "object"
+    },
+    "invalid_conditions": {
+      "type": "array"
+    }
+  },
+  "additionalProperties": true
+}

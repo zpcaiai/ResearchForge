@@ -1,0 +1,52 @@
+[
+ {
+  "task": "Question Answering",
+  "dataset": "SQuAD1.1 dev",
+  "metric_name": "EM",
+  "file": "benchmarks/retro-v1/raw/SQuAD1.1_dev.txt",
+  "seed_window_end": "2019-12-31",
+  "eval_window_start": "2020-01-01",
+  "eval_window_end": "2022-12-31",
+  "direction": "maximize"
+ },
+ {
+  "task": "Natural Language Inference",
+  "dataset": "MultiNLI",
+  "metric_name": "Matched",
+  "file": "benchmarks/retro-v1/raw/MultiNLI.txt",
+  "seed_window_end": "2019-12-31",
+  "eval_window_start": "2020-01-01",
+  "eval_window_end": "2022-12-31",
+  "direction": "maximize"
+ },
+ {
+  "task": "Named Entity Recognition",
+  "dataset": "CoNLL 2003 (English)",
+  "metric_name": "F1",
+  "file": "benchmarks/retro-v1/raw/CoNLL2003_English_F1.txt",
+  "seed_window_end": "2019-12-31",
+  "eval_window_start": "2020-01-01",
+  "eval_window_end": "2022-12-31",
+  "direction": "maximize"
+ },
+ {
+  "task": "Image Classification",
+  "dataset": "ImageNet",
+  "metric_name": "Top 1 Accuracy",
+  "file": "benchmarks/retro-v1/raw/ImageNet_Top1.txt",
+  "seed_window_end": "2019-12-31",
+  "eval_window_start": "2020-01-01",
+  "eval_window_end": "2022-12-31",
+  "direction": "maximize"
+ },
+ {
+  "task": "Machine Translation",
+  "dataset": "WMT2014 English-German",
+  "metric_name": "BLEU score",
+  "file": "benchmarks/retro-v1/raw/WMT2014_EnDe_BLEU.txt",
+  "seed_window_end": "2019-12-31",
+  "eval_window_start": "2020-01-01",
+  "eval_window_end": "2022-12-31",
+  "direction": "maximize"
+ }
+]

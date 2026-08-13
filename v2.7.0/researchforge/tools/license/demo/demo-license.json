@@ -1,0 +1,20 @@
+{
+  "license": {
+    "licensee": "Demo Lab (throwaway key — not a real customer)",
+    "edition": "site",
+    "expires": "2099-12-31",
+    "features": [
+      "ingest",
+      "literature",
+      "reproduction",
+      "innovation",
+      "human-gate",
+      "experiment-engine",
+      "manuscript",
+      "deck",
+      "release-gate"
+    ],
+    "issued": "2026-08-11"
+  },
+  "signature": "RYSixLh2gVEJEEpG5BDIFZYcANguiQn6DHmNY9ENcVhmGEJmIT/djLcgDPqmSnP0MoLG12vlsWNWvmtd1n3HDg=="
+}

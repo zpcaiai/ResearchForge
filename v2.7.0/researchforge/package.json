@@ -1,0 +1,14 @@
+{
+  "name": "researchforge",
+  "version": "0.3.0",
+  "private": true,
+  "type": "module",
+  "workspaces": ["packages/*"],
+  "scripts": {
+    "codegen": "python3 tools/codegen/generate.py",
+    "build": "tsc -b packages/contracts packages/cli",
+    "test": "npm run build && node --test packages/cli/dist/*.test.js",
+    "test:py": "cd python && PYTHONPATH=. python3 -m pytest tests -q"
+  },
+  "devDependencies": { "typescript": "^5.6.0", "@types/node": "^22.0.0" }
+}

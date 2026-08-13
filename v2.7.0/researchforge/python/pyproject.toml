@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "researchforge"
+version = "0.3.0"
+description = "ResearchForge Python core — paper intake, literature, reproduction, innovation engine"
+requires-python = ">=3.11"
+dependencies = ["jsonschema>=4.20", "httpx>=0.27", "beautifulsoup4>=4.12", "lxml>=5.0", "pypdf>=4.0"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[tool.setuptools.packages.find]
+include = ["researchforge*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

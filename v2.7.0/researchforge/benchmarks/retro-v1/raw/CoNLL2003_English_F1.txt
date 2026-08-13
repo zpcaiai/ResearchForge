@@ -1,0 +1,65 @@
+ACE + document-context ~ https://arxiv.org/abs/2010.05006v4 ~ 94.6
+LUKE 483M ~ https://arxiv.org/abs/2010.01057v1 ~ 94.3
+Co-regularized LUKE ~ https://arxiv.org/abs/2104.08656v2 ~ 94.22
+LUKE + SubRegWeigh (K-means) ~ https://arxiv.org/abs/2409.06216v2 ~ 94.2
+ASP+T5-3B ~ https://arxiv.org/abs/2210.14698v2 ~ 94.1
+FLERT XLM-R ~ https://arxiv.org/abs/2011.06993v2 ~ 94.09
+PL-Marker ~ https://arxiv.org/abs/2109.06067v5 ~ 94.0
+CL-KL ~ https://arxiv.org/abs/2105.03654v3 ~ 93.85
+XLNet-GCN ~ https://arxiv.org/abs/2112.08033v1 ~ 93.82
+RoBERTa + SubRegWeigh (K-means) ~ https://arxiv.org/abs/2409.06216v2 ~ 93.81
+ASP+flan-T5-large ~ https://arxiv.org/abs/2210.14698v2 ~ 93.8
+Cross-sentence context (First) ~ https://arxiv.org/abs/2006.01563v2 ~ 93.74
+XLM-RoBERTa-large union ~ https://arxiv.org/abs/2406.17474v1 ~ 93.69
+Baseline + BS ~ https://arxiv.org/abs/2204.12031v1 ~ 93.65
+ACE ~ https://arxiv.org/abs/2010.05006v4 ~ 93.64
+BERT-CRF ~ https://arxiv.org/abs/2111.03837v3 ~ 93.6
+CNN Large + fine-tune ~ http://arxiv.org/abs/1903.07785v1 ~ 93.5
+Biaffine-NER ~ https://arxiv.org/abs/2005.07150v3 ~ 93.5
+GCDT + BERT-L ~ https://arxiv.org/abs/1906.02437v1 ~ 93.47
+CrossWeigh + Pooled Flair ~ https://arxiv.org/abs/1909.01441v1 ~ 93.43
+LSTM-CRF+ELMo+BERT+Flair ~ https://arxiv.org/abs/1908.06926v1 ~ 93.38
+Hierarchical + BERT ~ https://arxiv.org/abs/1911.02257v2 ~ 93.37
+BERT-CRF (Replicated in AdaSeq) ~ https://arxiv.org/abs/2105.03654v3 ~ 93.35
+BERT-MRC+DSC ~ https://arxiv.org/abs/1911.02855v3 ~ 93.33
+XLNet ~ https://arxiv.org/abs/2112.08033v1 ~ 93.28
+BARTNER ~ https://arxiv.org/abs/2106.01223v1 ~ 93.24
+GoLLIE ~ https://arxiv.org/abs/2310.03668v5 ~ 93.1
+PromptNER [RoBERTa-large] ~ https://arxiv.org/abs/2305.17104v1 ~ 93.08
+W2NER ~ https://arxiv.org/abs/2112.10070v1 ~ 93.07
+BERT-MRC ~ https://arxiv.org/abs/1910.11476v7 ~ 93.04
+Locate and Label ~ https://arxiv.org/abs/2105.06804v2 ~ 92.94
+PIQN ~ https://arxiv.org/abs/2203.10545v1 ~ 92.87
+DiffusionNER ~ https://arxiv.org/abs/2305.13298v1 ~ 92.78
+TENER ~ https://arxiv.org/abs/1911.04474v3 ~ 92.62
+CVT + Multi-Task ~ http://arxiv.org/abs/1809.08370v1 ~ 92.61
+Stack LSTM ~ https://arxiv.org/abs/1907.08243v1 ~ 92.43
+PromptNER [BERT-large] ~ https://arxiv.org/abs/2305.17104v1 ~ 92.41
+DGLSTM-CRF + ELMo (L=2) ~ https://arxiv.org/abs/1909.10148v1 ~ 92.4
+GRN ~ https://arxiv.org/abs/1907.05611v2 ~ 92.34
+Neural-CRF+AE ~ http://arxiv.org/abs/1808.09075v1 ~ 92.29
+MGNER ~ https://arxiv.org/abs/1906.08449v1 ~ 92.28
+BiLSTM-CRF+ELMo ~ http://arxiv.org/abs/1802.05365v2 ~ 92.22
+SpanRel ~ https://arxiv.org/abs/1911.03822v2 ~ 92.2
+LD-Net ~ http://arxiv.org/abs/1804.07827v2 ~ 92.03
+GCDT ~ https://arxiv.org/abs/1906.02437v1 ~ 91.96
+Hierarchical ~ https://arxiv.org/abs/1911.02257v2 ~ 91.96
+CRF + AutoEncoder ~ http://arxiv.org/abs/1808.09075v1 ~ 91.87
+Bi-LSTM-CRF + Lexical Features ~ http://arxiv.org/abs/1806.03489v1 ~ 91.73
+IntNet + BiLSTM-CRF ~ http://arxiv.org/abs/1810.12443v1 ~ 91.64
+Yang et al. 2017a ~ http://arxiv.org/abs/1707.05127v1 ~ 91.62
+Bi-LSTM-CNN ~ http://arxiv.org/abs/1511.08308v5 ~ 91.62
+S-LSTM ~ http://arxiv.org/abs/1805.02474v1 ~ 91.57
+LSTM with dynamic skip ~ http://arxiv.org/abs/1811.03873v1 ~ 91.56
+Adversarial Bi-LSTM ~ http://arxiv.org/abs/1711.04903v2 ~ 91.56
+HSCRF ~ http://arxiv.org/abs/1805.03838v1 ~ 91.38
+IXA pipes ~ http://arxiv.org/abs/1701.09123v1 ~ 91.36
+NCRF++ ~ http://arxiv.org/abs/1806.05626v2 ~ 91.35
+Yang et al. ~ http://arxiv.org/abs/1703.06345v1 ~ 91.26
+LM-LSTM-CRF ~ http://arxiv.org/abs/1709.04109v4 ~ 91.24
+BLSTM-CNN-CRF ~ http://arxiv.org/abs/1603.01354v5 ~ 91.21
+Bi-LSTM + Logic rules ~ https://arxiv.org/abs/1603.06318v6 ~ 91.18
+LSTM-CRF ~ http://arxiv.org/abs/1603.01360v3 ~ 90.94
+GCN ~ https://arxiv.org/abs/2112.08033v1 ~ 88.63
+SWEM-CRF ~ http://arxiv.org/abs/1805.09843v1 ~ 86.28
+VSL-GG-Hier ~ https://arxiv.org/abs/1906.09535v1 ~ 84.7

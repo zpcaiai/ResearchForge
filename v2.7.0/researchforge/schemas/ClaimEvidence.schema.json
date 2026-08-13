@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ClaimEvidence",
+  "type": "object",
+  "required": [
+    "claim_id",
+    "claim_text",
+    "support_edges"
+  ],
+  "properties": {
+    "claim_id": {
+      "type": "string"
+    },
+    "claim_text": {
+      "type": "string"
+    },
+    "claim_type": {
+      "type": "string"
+    },
+    "support_edges": {
+      "type": "array"
+    },
+    "conflicts": {
+      "type": "array"
+    },
+    "status": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

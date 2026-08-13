@@ -1,0 +1,243 @@
+{
+ "corpus_version": "1",
+ "source": {
+  "name": "Papers With Code evaluation tables (archived dump)",
+  "hub_dataset": "felixleungsc/paperswithcode-data-evaluation-tables",
+  "upstream_archive": "hf://datasets/pwc-archive/files/jul-28-evaluation-tables.json.gz",
+  "retrieved_via": "huggingface datasets-server /filter, server-side WHERE per benchmark"
+ },
+ "construction": {
+  "seed_rule": "per benchmark, the record holder on the declared metric as of the seed window end. The window is closed above and open below: what has to be closed for 'afterwards' to mean anything is the cut date, not the seed's own age. A benchmark whose record holder predates the cut by years is kept and its date recorded, because excluding it would drop exactly the benchmarks where progress had stalled",
+  "followup_rule": "the record-holder chain in the evaluation window: each paper that set a new best after the seed, in date order, deduplicated by arXiv id",
+  "relation_basis": "published number on the same benchmark, not text adjudication",
+  "date_basis": "arXiv identifier month unless a publication date was supplied"
+ },
+ "benchmarks_skipped": [
+  {
+   "benchmark": "SQuAD1.1 dev",
+   "reason": "only 0 record-setting follow-up(s) in the evaluation window; below the declared minimum"
+  },
+  {
+   "benchmark": "MultiNLI",
+   "reason": "only 0 record-setting follow-up(s) in the evaluation window; below the declared minimum"
+  },
+  {
+   "benchmark": "WMT2014 English-German",
+   "reason": "only 1 record-setting follow-up(s) in the evaluation window; below the declared minimum"
+  }
+ ],
+ "rows_dropped": [
+  {
+   "benchmark": "SQuAD1.1 dev",
+   "rows": [
+    {
+     "line": "R-NET (single) | https://aclanthology.org/P17-1018 | EM | 71.1",
+     "value": 71.1,
+     "why": "no dated arXiv identifier, so the row cannot be placed in time; if it held the record the seed below is not the record holder"
+    },
+    {
+     "line": "R-NET (single) | https://aclanthology.org/P17-1018 | F1 | 79.5",
+     "value": 79.5,
+     "why": "no dated arXiv identifier, so the row cannot be placed in time; if it held the record the seed below is not the record holder"
+    }
+   ]
+  },
+  {
+   "benchmark": "MultiNLI",
+   "rows": [
+    {
+     "line": "Turing NLR v5 XXL 5.4B (fine-tuned) | null | Matched | 92.6",
+     "value": 92.6,
+     "why": "no dated arXiv identifier, so the row cannot be placed in time; if it held the record the seed below is not the record holder"
+    },
+    {
+     "line": "MFAE | https://epubs.siam.org/doi/10.1137/1.9781611976236.26 | Matched | 82.31",
+     "value": 82.31,
+     "why": "no dated arXiv identifier, so the row cannot be placed in time; if it held the record the seed below is not the record holder"
+    },
+    {
+     "line": "Finetuned Transformer LM | null | Matched | 82.1",
+     "value": 82.1,
+     "why": "no dated arXiv identifier, so the row cannot be placed in time; if it held the record the seed below is not the record holder"
+    }
+   ]
+  }
+ ],
+ "rows_dropped_note": "a dropped row is the one thing that can falsify the seed rule: if it held the record, the recorded seed did not. They are listed rather than counted so the claim can be checked.",
+ "pairs": [
+  {
+   "seed_id": "CoNLL 2003 (English)::1903.07785",
+   "seed_arxiv_id": "1903.07785",
+   "seed_title": "Cloze-driven Pretraining of Self-attention Networks",
+   "seed_published": "2019-03-19",
+   "seed_date_basis": "publication_date",
+   "benchmark": {
+    "task": "Named Entity Recognition",
+    "dataset": "CoNLL 2003 (English)",
+    "metric": "F1",
+    "direction": "maximize",
+    "seed_model": "CNN Large + fine-tune",
+    "seed_value": 93.5
+   },
+   "date_ambiguities": [
+    {
+     "arxiv_id": "2010.01057",
+     "date": "2020-10-01"
+    },
+    {
+     "arxiv_id": "2010.05006",
+     "date": "2020-10-01"
+    }
+   ],
+   "followups": [
+    {
+     "id": "2006.01563",
+     "title": "Cross-sentence context (First)",
+     "published": "2020-06-02",
+     "relation": "replaces",
+     "problem_delta": "same task and benchmark as the seed (Named Entity Recognition on CoNLL 2003 (English)); the delta is in how the F1 is reached, not in what is being measured",
+     "method_delta": "Cross-sentence context (First) replaces CNN Large + fine-tune",
+     "mechanism": "extend the BERT input with neighbouring sentences and combine the several predictions each token then receives by contextual majority voting",
+     "demonstrating_experiment": "CoNLL 2003 (English) / F1: 93.5 -> 93.74 (previous record -> this paper), as recorded in the Papers With Code evaluation table",
+     "_source_row": {
+      "model_name": "Cross-sentence context (First)",
+      "value": 93.74,
+      "paper_url": "https://arxiv.org/abs/2006.01563v2",
+      "date_basis": "publication_date"
+     }
+    },
+    {
+     "id": "2010.01057",
+     "title": "LUKE: Deep Contextualized Entity Representations with Entity-aware Self-attention",
+     "published": "2020-10-02",
+     "relation": "replaces",
+     "problem_delta": "same task and benchmark as the seed (Named Entity Recognition on CoNLL 2003 (English)); the delta is in how the F1 is reached, not in what is being measured",
+     "method_delta": "LUKE 483M replaces CNN Large + fine-tune",
+     "mechanism": "treat entities as first-class tokens alongside words, pretrain by masking both, and extend self-attention with an entity-aware term that conditions on whether each token is a word or an entity",
+     "demonstrating_experiment": "CoNLL 2003 (English) / F1: 93.74 -> 94.3 (previous record -> this paper), as recorded in the Papers With Code evaluation table",
+     "_source_row": {
+      "model_name": "LUKE 483M",
+      "value": 94.3,
+      "paper_url": "https://arxiv.org/abs/2010.01057v1",
+      "date_basis": "publication_date"
+     }
+    },
+    {
+     "id": "2010.05006",
+     "title": "Automated Concatenation of Embeddings for Structured Prediction",
+     "published": "2020-10-10",
+     "relation": "replaces",
+     "problem_delta": "same task and benchmark as the seed (Named Entity Recognition on CoNLL 2003 (English)); the delta is in how the F1 is reached, not in what is being measured",
+     "method_delta": "ACE + document-context replaces CNN Large + fine-tune",
+     "mechanism": "search automatically over which pretrained embeddings to concatenate for a given task, instead of fixing the concatenation by hand",
+     "demonstrating_experiment": "CoNLL 2003 (English) / F1: 94.3 -> 94.6 (previous record -> this paper), as recorded in the Papers With Code evaluation table",
+     "_source_row": {
+      "model_name": "ACE + document-context",
+      "value": 94.6,
+      "paper_url": "https://arxiv.org/abs/2010.05006v4",
+      "date_basis": "publication_date"
+     }
+    }
+   ]
+  },
+  {
+   "seed_id": "ImageNet::1911.04252",
+   "seed_arxiv_id": "1911.04252",
+   "seed_title": "Self-training with Noisy Student improves ImageNet classification",
+   "seed_published": "2019-11-11",
+   "seed_date_basis": "publication_date",
+   "benchmark": {
+    "task": "Image Classification",
+    "dataset": "ImageNet",
+    "metric": "Top 1 Accuracy",
+    "direction": "maximize",
+    "seed_model": "NoisyStudent (EfficientNet-L2)",
+    "seed_value": 88.4
+   },
+   "date_ambiguities": [
+    {
+     "arxiv_id": "2003.08237",
+     "date": "2020-03-01"
+    },
+    {
+     "arxiv_id": "2003.10580",
+     "date": "2020-03-01"
+    },
+    {
+     "arxiv_id": "2203.05482",
+     "date": "2022-03-01"
+    },
+    {
+     "arxiv_id": "2205.01917",
+     "date": "2022-05-01"
+    }
+   ],
+   "followups": [
+    {
+     "id": "2003.08237",
+     "title": "Fixing the train-test resolution discrepancy: FixEfficientNet",
+     "published": "2020-03-18",
+     "relation": "replaces",
+     "problem_delta": "same task and benchmark as the seed (Image Classification on ImageNet); the delta is in how the Top 1 Accuracy is reached, not in what is being measured",
+     "method_delta": "FixEfficientNet-L2 replaces NoisyStudent (EfficientNet-L2)",
+     "mechanism": "correct the mismatch between the image resolution seen in training and the one seen at test time, rather than changing the architecture or the training data",
+     "demonstrating_experiment": "ImageNet / Top 1 Accuracy: 88.4 -> 88.5 (previous record -> this paper), as recorded in the Papers With Code evaluation table",
+     "_source_row": {
+      "model_name": "FixEfficientNet-L2",
+      "value": 88.5,
+      "paper_url": "https://arxiv.org/abs/2003.08237v5",
+      "date_basis": "publication_date"
+     }
+    },
+    {
+     "id": "2003.10580",
+     "title": "Meta Pseudo Labels",
+     "published": "2020-03-23",
+     "relation": "replaces",
+     "problem_delta": "same task and benchmark as the seed (Image Classification on ImageNet); the delta is in how the Top 1 Accuracy is reached, not in what is being measured",
+     "method_delta": "Meta Pseudo Labels (EfficientNet-B6-Wide) replaces NoisyStudent (EfficientNet-L2)",
+     "mechanism": "the teacher is no longer fixed: it is adapted by feedback from the student's performance on the labelled set, so pseudo-label generation is itself learned rather than frozen",
+     "demonstrating_experiment": "ImageNet / Top 1 Accuracy: 88.5 -> 90.0 (previous record -> this paper), as recorded in the Papers With Code evaluation table",
+     "_source_row": {
+      "model_name": "Meta Pseudo Labels (EfficientNet-B6-Wide)",
+      "value": 90.0,
+      "paper_url": "https://arxiv.org/abs/2003.10580v4",
+      "date_basis": "publication_date"
+     }
+    },
+    {
+     "id": "2203.05482",
+     "title": "Model soups: averaging weights of multiple fine-tuned models improves accuracy without increasing inference time",
+     "published": "2022-03-10",
+     "relation": "replaces",
+     "problem_delta": "same task and benchmark as the seed (Image Classification on ImageNet); the delta is in how the Top 1 Accuracy is reached, not in what is being measured",
+     "method_delta": "Model soups (ViT-G/14) replaces NoisyStudent (EfficientNet-L2)",
+     "mechanism": "average the weights of models fine-tuned under different hyperparameter configurations, which lie in a single low-error basin, instead of selecting the single best and discarding the rest",
+     "demonstrating_experiment": "ImageNet / Top 1 Accuracy: 90.0 -> 90.94 (previous record -> this paper), as recorded in the Papers With Code evaluation table",
+     "_source_row": {
+      "model_name": "Model soups (ViT-G/14)",
+      "value": 90.94,
+      "paper_url": "https://arxiv.org/abs/2203.05482v3",
+      "date_basis": "publication_date"
+     }
+    },
+    {
+     "id": "2205.01917",
+     "title": "CoCa: Contrastive Captioners are Image-Text Foundation Models",
+     "published": "2022-05-04",
+     "relation": "replaces",
+     "problem_delta": "same task and benchmark as the seed (Image Classification on ImageNet); the delta is in how the Top 1 Accuracy is reached, not in what is being measured",
+     "method_delta": "CoCa (finetuned) replaces NoisyStudent (EfficientNet-L2)",
+     "mechanism": "one image-text encoder-decoder pretrained jointly with a contrastive loss and a captioning loss, with cross-attention omitted in the first half of the decoder so those layers encode unimodal text",
+     "demonstrating_experiment": "ImageNet / Top 1 Accuracy: 90.94 -> 91.0 (previous record -> this paper), as recorded in the Papers With Code evaluation table",
+     "_source_row": {
+      "model_name": "CoCa (finetuned)",
+      "value": 91.0,
+      "paper_url": "https://arxiv.org/abs/2205.01917v2",
+      "date_basis": "publication_date"
+     }
+    }
+   ]
+  }
+ ]
+}

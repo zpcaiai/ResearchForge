@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PaperModel",
+  "type": "object",
+  "required": [
+    "paper_id",
+    "title",
+    "sections",
+    "claims"
+  ],
+  "properties": {
+    "paper_id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "sections": {
+      "type": "array"
+    },
+    "claims": {
+      "type": "array"
+    },
+    "methods": {
+      "type": "array"
+    },
+    "datasets": {
+      "type": "array"
+    },
+    "metrics": {
+      "type": "array"
+    },
+    "limitations": {
+      "type": "array"
+    },
+    "locators": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,1603 @@
+{
+ "artifacts": {
+  "paper_source_file": {
+   "producer": "paper-ingest",
+   "path": "source/paper.pdf|.html",
+   "schema": null,
+   "description": "Fetched primary source document"
+  },
+  "normalized_text": {
+   "producer": "paper-ingest",
+   "path": "source/normalized_text.md",
+   "schema": null,
+   "description": "Layout-normalized full text"
+  },
+  "locator_map": {
+   "producer": "paper-ingest",
+   "path": "source/locator_map.json",
+   "schema": null,
+   "description": "Text span -> page/section anchors"
+  },
+  "paper_assets": {
+   "producer": "paper-ingest",
+   "path": "source/assets/",
+   "schema": null,
+   "description": "Extracted figures, tables, equations"
+  },
+  "source_manifest": {
+   "producer": "paper-ingest",
+   "path": "source/source_manifest.json",
+   "schema": null,
+   "description": "Retrieval provenance of the source"
+  },
+  "visual_notes": {
+   "producer": "paper-ingest",
+   "path": "source/visual_notes.jsonl",
+   "schema": null,
+   "description": "Observations from rendered pages"
+  },
+  "layout_warnings": {
+   "producer": "paper-ingest",
+   "path": "source/layout_warnings.md",
+   "schema": null,
+   "description": "Parse/layout risks needing human check"
+  },
+  "paper_model": {
+   "producer": "paper-model-builder",
+   "path": "source/paper_model.json",
+   "schema": "PaperModel",
+   "description": "Structured model of the source paper"
+  },
+  "section_map": {
+   "producer": "paper-model-builder",
+   "path": "source/section_map.json",
+   "schema": null,
+   "description": "Canonical section tree"
+  },
+  "figure_table_index": {
+   "producer": "paper-model-builder",
+   "path": "source/figure_table_index.json",
+   "schema": null,
+   "description": "Index of figures/tables with anchors"
+  },
+  "contribution_atoms": {
+   "producer": "paper-model-builder",
+   "path": "evidence/contribution_atoms.json",
+   "schema": null,
+   "description": "Atomic contributions of the source paper"
+  },
+  "method_dependency_graph": {
+   "producer": "paper-model-builder",
+   "path": "evidence/dependency_graph.json",
+   "schema": null,
+   "description": "Dependencies between method components"
+  },
+  "claim_registry": {
+   "producer": "claim-evidence-graph",
+   "path": "evidence/claim_registry.json",
+   "schema": null,
+   "description": "Registry of extracted claims"
+  },
+  "evidence_graph": {
+   "producer": "claim-evidence-graph",
+   "path": "evidence/evidence_graph.jsonl",
+   "schema": "ClaimEvidence",
+   "description": "Claim -> evidence edges"
+  },
+  "literature_search_plan": {
+   "producer": "literature-search",
+   "path": "literature/search_plan.json",
+   "schema": null,
+   "description": "Query families and coverage plan"
+  },
+  "literature_candidates": {
+   "producer": "literature-search",
+   "path": "literature/literature_candidates.jsonl",
+   "schema": null,
+   "description": "Retrieved candidate works"
+  },
+  "literature_retrieval_log": {
+   "producer": "literature-search",
+   "path": "literature/retrieval_log.jsonl",
+   "schema": null,
+   "description": "Provider calls, quotas, coverage gaps"
+  },
+  "resolved_references": {
+   "producer": "citation-resolver",
+   "path": "literature/references.jsonl",
+   "schema": null,
+   "description": "DOI/arXiv-resolved reference records"
+  },
+  "bibliography": {
+   "producer": "citation-resolver",
+   "path": "paper/references.bib",
+   "schema": null,
+   "description": "Rendered bibliography"
+  },
+  "citation_resolution_report": {
+   "producer": "citation-resolver",
+   "path": "literature/resolution_report.md",
+   "schema": null,
+   "description": "Unresolved/ambiguous reference report"
+  },
+  "citation_graph": {
+   "producer": "citation-resolver",
+   "path": "literature/citation_graph.json",
+   "schema": null,
+   "description": "Forward/backward citation graph"
+  },
+  "citation_clusters": {
+   "producer": "citation-resolver",
+   "path": "literature/neighbor_clusters.json",
+   "schema": null,
+   "description": "Topical clusters of neighbors"
+  },
+  "citation_gap_candidates": {
+   "producer": "citation-resolver",
+   "path": "literature/gap_candidates.jsonl",
+   "schema": null,
+   "description": "Under-explored regions of the graph"
+  },
+  "library_hits": {
+   "producer": "literature-search",
+   "path": "literature/library_hits.jsonl",
+   "schema": null,
+   "description": "Matches in the user's personal library"
+  },
+  "library_note_links": {
+   "producer": "literature-search",
+   "path": "literature/note_links.json",
+   "schema": null,
+   "description": "Links to user notes/annotations"
+  },
+  "landscape_report": {
+   "producer": "literature-search",
+   "path": "literature/landscape.md",
+   "schema": null,
+   "description": "Narrative landscape of the field"
+  },
+  "system_matrix": {
+   "producer": "literature-search",
+   "path": "literature/system_matrix.csv",
+   "schema": null,
+   "description": "Comparable systems x capabilities"
+  },
+  "benchmark_matrix": {
+   "producer": "literature-search",
+   "path": "literature/benchmark_matrix.csv",
+   "schema": null,
+   "description": "Benchmarks x reported results"
+  },
+  "baseline_repo_rankings": {
+   "producer": "result-reproducer",
+   "path": "baseline/repo_rankings.json",
+   "schema": null,
+   "description": "Ranked candidate code repositories"
+  },
+  "baseline_assets": {
+   "producer": "result-reproducer",
+   "path": "baseline/baseline_assets.json",
+   "schema": null,
+   "description": "Pinned repo/data/checkpoint locations"
+  },
+  "baseline_license_risk": {
+   "producer": "result-reproducer",
+   "path": "baseline/license_risk.md",
+   "schema": null,
+   "description": "License and reuse constraints"
+  },
+  "reproduction_report": {
+   "producer": "result-reproducer",
+   "path": "baseline/reproduction_report.json",
+   "schema": null,
+   "description": "Reproduction attempt outcome"
+  },
+  "baseline_metrics": {
+   "producer": "result-reproducer",
+   "path": "baseline/baseline_metrics.json",
+   "schema": null,
+   "description": "Locally measured baseline numbers"
+  },
+  "baseline_deviation_log": {
+   "producer": "result-reproducer",
+   "path": "baseline/deviation_log.md",
+   "schema": null,
+   "description": "Deviations from published setup"
+  },
+  "weakness_map": {
+   "producer": "idea-seed-miner",
+   "path": "ideas/weakness_map.json",
+   "schema": null,
+   "description": "Assumptions, failure modes, blind spots"
+  },
+  "assumption_tests": {
+   "producer": "idea-seed-miner",
+   "path": "ideas/assumption_tests.jsonl",
+   "schema": null,
+   "description": "Cheap probes that would falsify assumptions"
+  },
+  "gap_ledger": {
+   "producer": "idea-seed-miner",
+   "path": "ideas/gap_ledger.jsonl",
+   "schema": null,
+   "description": "Evidenced research gaps"
+  },
+  "gap_evidence": {
+   "producer": "idea-seed-miner",
+   "path": "ideas/gap_evidence.md",
+   "schema": null,
+   "description": "Citations supporting each gap"
+  },
+  "analogy_candidates": {
+   "producer": "idea-seed-miner",
+   "path": "ideas/analogy_candidates.jsonl",
+   "schema": null,
+   "description": "Cross-domain mechanism transfers"
+  },
+  "idea_portfolio": {
+   "producer": "idea-portfolio-generator",
+   "path": "ideas/idea_portfolio.json",
+   "schema": "IdeaCandidate",
+   "description": "Candidate innovation directions"
+  },
+  "mutant_candidates": {
+   "producer": "idea-portfolio-generator",
+   "path": "ideas/mutant_candidates.jsonl",
+   "schema": null,
+   "description": "Mutated/recombined idea variants"
+  },
+  "idea_lineage_graph": {
+   "producer": "idea-portfolio-generator",
+   "path": "ideas/lineage_graph.json",
+   "schema": null,
+   "description": "Parent-child lineage of ideas"
+  },
+  "novelty_report": {
+   "producer": "idea-evaluator",
+   "path": "ideas/novelty_report.json",
+   "schema": null,
+   "description": "Novelty status with coverage limits"
+  },
+  "closest_prior_work": {
+   "producer": "idea-evaluator",
+   "path": "ideas/closest_prior_work.jsonl",
+   "schema": null,
+   "description": "Nearest prior work with delta table"
+  },
+  "feasibility_report": {
+   "producer": "idea-evaluator",
+   "path": "ideas/feasibility_report.json",
+   "schema": null,
+   "description": "Feasibility and uncertainty, scored separately"
+  },
+  "ranked_ideas": {
+   "producer": "idea-ranker",
+   "path": "ideas/ranked_ideas.json",
+   "schema": null,
+   "description": "Multi-criteria ranked directions"
+  },
+  "idea_pareto_front": {
+   "producer": "idea-ranker",
+   "path": "ideas/pareto_front.json",
+   "schema": null,
+   "description": "Non-dominated set"
+  },
+  "ranking_rationale": {
+   "producer": "idea-ranker",
+   "path": "ideas/ranking_rationale.md",
+   "schema": null,
+   "description": "Decisive tradeoffs and swing evidence"
+  },
+  "selected_direction": {
+   "producer": "user-feedback-gate",
+   "path": "ideas/selected_direction.json",
+   "schema": null,
+   "description": "Human-approved direction (or auto decision record)"
+  },
+  "decision_log": {
+   "producer": "user-feedback-gate",
+   "path": "ideas/decision_log.jsonl",
+   "schema": null,
+   "description": "Selection/merge/reject history"
+  },
+  "research_blueprint": {
+   "producer": "research-blueprint-compiler",
+   "path": "research_blueprint.yaml",
+   "schema": "ResearchBlueprint",
+   "description": "Executable plan for the selected direction"
+  },
+  "blueprint_dag": {
+   "producer": "research-blueprint-compiler",
+   "path": "experiments/dag.json",
+   "schema": null,
+   "description": "Stage dependency DAG"
+  },
+  "acceptance_criteria": {
+   "producer": "research-blueprint-compiler",
+   "path": "experiments/acceptance_criteria.md",
+   "schema": null,
+   "description": "What counts as success/failure"
+  },
+  "experiment_specs": {
+   "producer": "research-blueprint-compiler",
+   "path": "experiments/*.yaml",
+   "schema": "ExperimentSpec",
+   "description": "Falsifiable experiment specifications"
+  },
+  "evaluator_code": {
+   "producer": "evaluator-builder",
+   "path": "evaluation/evaluate.py",
+   "schema": null,
+   "description": "Scoring implementation (grader side)"
+  },
+  "hidden_tests": {
+   "producer": "evaluator-builder",
+   "path": "evaluation/hidden_tests/",
+   "schema": null,
+   "description": "Decisive tests, never mounted into agent context"
+  },
+  "evaluator_spec": {
+   "producer": "evaluator-builder",
+   "path": "evaluation/evaluator_spec.md",
+   "schema": null,
+   "description": "Metric semantics and validity rules"
+  },
+  "sandbox_manifest": {
+   "producer": "sandbox-provisioner",
+   "path": "experiments/sandbox_manifest.json",
+   "schema": null,
+   "description": "Sandbox identity and limits"
+  },
+  "sandbox_container_config": {
+   "producer": "sandbox-provisioner",
+   "path": "experiments/container.yaml",
+   "schema": null,
+   "description": "Container/venv definition"
+  },
+  "environment_lock": {
+   "producer": "sandbox-provisioner",
+   "path": "experiments/environment.lock",
+   "schema": null,
+   "description": "Pinned package/system versions"
+  },
+  "code_worktree": {
+   "producer": "codebase-scaffolder",
+   "path": "code/",
+   "schema": null,
+   "description": "Generated code branch/worktree"
+  },
+  "code_tests": {
+   "producer": "codebase-scaffolder",
+   "path": "code/tests/",
+   "schema": null,
+   "description": "Tests for generated code"
+  },
+  "implementation_plan": {
+   "producer": "codebase-scaffolder",
+   "path": "code/implementation_plan.md",
+   "schema": null,
+   "description": "Mapping from blueprint to modules"
+  },
+  "failure_diagnosis": {
+   "producer": "codebase-scaffolder",
+   "path": "experiments/failure_diagnosis.json",
+   "schema": null,
+   "description": "Root-cause classification of a failed run"
+  },
+  "repair_commits": {
+   "producer": "codebase-scaffolder",
+   "path": "code/.git/repair_commits",
+   "schema": null,
+   "description": "Bounded repair commits"
+  },
+  "debug_terminal_status": {
+   "producer": "codebase-scaffolder",
+   "path": "experiments/terminal_status.json",
+   "schema": null,
+   "description": "Terminal classification preventing retry loops"
+  },
+  "experiment_tree": {
+   "producer": "experiment-runner",
+   "path": "experiments/experiment_tree.json",
+   "schema": null,
+   "description": "Search tree over experimental branches"
+  },
+  "ranked_branches": {
+   "producer": "experiment-runner",
+   "path": "experiments/ranked_branches.json",
+   "schema": null,
+   "description": "Branches ranked by measured evidence"
+  },
+  "best_candidate": {
+   "producer": "experiment-runner",
+   "path": "experiments/best_candidate.json",
+   "schema": null,
+   "description": "Best surviving candidate"
+  },
+  "experiment_ledger": {
+   "producer": "experiment-runner",
+   "path": "experiment_ledger.jsonl",
+   "schema": "ExperimentResult",
+   "description": "Append-only record of every run"
+  },
+  "analysis_code": {
+   "producer": "data-analyst",
+   "path": "analysis/analysis.py|ipynb",
+   "schema": null,
+   "description": "Reproducible analysis script"
+  },
+  "analysis_results": {
+   "producer": "data-analyst",
+   "path": "analysis/analysis_results.json",
+   "schema": null,
+   "description": "Computed results"
+  },
+  "analysis_plots": {
+   "producer": "data-analyst",
+   "path": "analysis/plots/",
+   "schema": null,
+   "description": "Diagnostic plots"
+  },
+  "analysis_report": {
+   "producer": "data-analyst",
+   "path": "analysis/analysis_report.md",
+   "schema": null,
+   "description": "Analyst-grade narrative"
+  },
+  "stats_audit": {
+   "producer": "integrity-auditor",
+   "path": "analysis/stats_audit.json",
+   "schema": null,
+   "description": "Statistical validity findings"
+  },
+  "meta_analysis": {
+   "producer": "integrity-auditor",
+   "path": "analysis/meta_analysis.json",
+   "schema": null,
+   "description": "Aggregation across repeated trials"
+  },
+  "meta_analysis_decision": {
+   "producer": "integrity-auditor",
+   "path": "analysis/decision.md",
+   "schema": null,
+   "description": "Keep/kill decision with rationale"
+  },
+  "negative_findings": {
+   "producer": "finding-memory",
+   "path": "findings/negative_findings.jsonl",
+   "schema": null,
+   "description": "Curated negative and null results"
+  },
+  "boundary_conditions": {
+   "producer": "finding-memory",
+   "path": "findings/boundary_conditions.md",
+   "schema": null,
+   "description": "Where the method stops working"
+  },
+  "findings": {
+   "producer": "finding-memory",
+   "path": "findings.jsonl",
+   "schema": null,
+   "description": "Distilled durable findings"
+  },
+  "finding_memory_graph": {
+   "producer": "finding-memory",
+   "path": "findings/memory_graph.json",
+   "schema": null,
+   "description": "Relations between findings"
+  },
+  "manuscript_spine": {
+   "producer": "manuscript-builder",
+   "path": "paper/manuscript_spine.json",
+   "schema": null,
+   "description": "Central argument skeleton"
+  },
+  "figure_plan": {
+   "producer": "manuscript-builder",
+   "path": "paper/figure_plan.json",
+   "schema": null,
+   "description": "Which figures the argument requires"
+  },
+  "manuscript_draft": {
+   "producer": "manuscript-builder",
+   "path": "paper/main.tex|main.md",
+   "schema": null,
+   "description": "Evidence-bound manuscript draft"
+  },
+  "draft_manifest": {
+   "producer": "manuscript-builder",
+   "path": "paper/draft_manifest.json",
+   "schema": null,
+   "description": "Claim -> section -> evidence index"
+  },
+  "manuscript_pdf": {
+   "producer": "manuscript-builder",
+   "path": "paper/main.pdf",
+   "schema": null,
+   "description": "Rendered manuscript (optional)"
+  },
+  "claim_audit": {
+   "producer": "claim-citation-auditor",
+   "path": "review/claim_audit.jsonl",
+   "schema": null,
+   "description": "Per-claim support verdicts"
+  },
+  "citation_audit": {
+   "producer": "claim-citation-auditor",
+   "path": "review/citation_audit.md",
+   "schema": null,
+   "description": "Citation support report"
+  },
+  "review_report": {
+   "producer": "review-simulator",
+   "path": "review/review_report.json",
+   "schema": null,
+   "description": "Simulated reviewer assessment"
+  },
+  "review_triage": {
+   "producer": "review-simulator",
+   "path": "review/review_triage.json",
+   "schema": null,
+   "description": "Atomic reviewer concerns, triaged"
+  },
+  "revision_matrix": {
+   "producer": "review-simulator",
+   "path": "review/revision_matrix.csv",
+   "schema": null,
+   "description": "Concern x action x evidence"
+  },
+  "response_to_reviewers": {
+   "producer": "review-simulator",
+   "path": "review/response_to_reviewers.md",
+   "schema": null,
+   "description": "Evidence-grounded response draft"
+  },
+  "revision_experiment_plan": {
+   "producer": "review-simulator",
+   "path": "review/experiment_plan.md",
+   "schema": null,
+   "description": "P0-P3 additional experiments"
+  },
+  "integrity_gate": {
+   "producer": "claim-citation-auditor",
+   "path": "review/integrity_gate.json",
+   "schema": null,
+   "description": "Pre-submission integrity verdict"
+  },
+  "submission_blockers": {
+   "producer": "claim-citation-auditor",
+   "path": "review/submission_blockers.md",
+   "schema": null,
+   "description": "Blocking issues before submission"
+  },
+  "selected_figure": {
+   "producer": "figure-factory",
+   "path": "figures/selected/",
+   "schema": null,
+   "description": "Chosen figure per storyboard item"
+  },
+  "figure_generation_trace": {
+   "producer": "figure-factory",
+   "path": "figures/generation_trace.json",
+   "schema": null,
+   "description": "How each figure was produced"
+  },
+  "editable_svg": {
+   "producer": "figure-factory",
+   "path": "figures/editable/",
+   "schema": null,
+   "description": "Editable vector version of a figure"
+  },
+  "svg_element_map": {
+   "producer": "figure-factory",
+   "path": "figures/element_map.json",
+   "schema": null,
+   "description": "Semantic labels for SVG elements"
+  },
+  "svg_validation_report": {
+   "producer": "figure-factory",
+   "path": "figures/validation_report.md",
+   "schema": null,
+   "description": "Editability/fidelity check"
+  },
+  "defense_deck": {
+   "producer": "deck-factory",
+   "path": "slides/defense.pptx",
+   "schema": null,
+   "description": "Native editable defense deck"
+  },
+  "deck_manifest": {
+   "producer": "deck-factory",
+   "path": "slides/deck_manifest.json",
+   "schema": null,
+   "description": "Deck contents and provenance"
+  },
+  "speaker_notes": {
+   "producer": "deck-factory",
+   "path": "slides/speaker_notes.md",
+   "schema": null,
+   "description": "Speaker notes per slide"
+  },
+  "quest_repo": {
+   "producer": "project-repo-manager",
+   "path": ".researchforge/quest_repo.json",
+   "schema": null,
+   "description": "The research quest Git repository"
+  },
+  "branch_map": {
+   "producer": "project-repo-manager",
+   "path": ".researchforge/branch_map.json",
+   "schema": null,
+   "description": "Idea/experiment -> branch mapping"
+  },
+  "checkpoint_metadata": {
+   "producer": "project-repo-manager",
+   "path": ".researchforge/checkpoints.jsonl",
+   "schema": null,
+   "description": "Resumable milestone checkpoints"
+  },
+  "provenance_log": {
+   "producer": "experiment-runner",
+   "path": "provenance.jsonl",
+   "schema": null,
+   "description": "Append-only artifact lineage"
+  },
+  "artifact_manifest": {
+   "producer": "experiment-runner",
+   "path": "artifact_manifest.json",
+   "schema": "ArtifactManifest",
+   "description": "Manifest of all project artifacts"
+  },
+  "progress_state": {
+   "producer": "researchforge-orchestrator",
+   "path": ".researchforge/progress.json",
+   "schema": null,
+   "description": "Budget, stage and pace state"
+  },
+  "research_state": {
+   "producer": "researchforge-orchestrator",
+   "path": ".researchforge/research_state.json",
+   "schema": null,
+   "description": "Top-level state machine state"
+  },
+  "release_bundle": {
+   "producer": "release-gate",
+   "path": "release/",
+   "schema": null,
+   "description": "Packaged final deliverables"
+  },
+  "release_manifest": {
+   "producer": "release-gate",
+   "path": "release/release_manifest.json",
+   "schema": null,
+   "description": "What shipped and under what gates"
+  },
+  "release_report": {
+   "producer": "release-gate",
+   "path": "release/release_report.md",
+   "schema": null,
+   "description": "Gate outcomes and open items"
+  },
+  "eval_runs": {
+   "producer": "research-eval-harness",
+   "path": "evals/eval_runs.jsonl",
+   "schema": null,
+   "description": "Runs of the system against a task suite"
+  },
+  "eval_scorecard": {
+   "producer": "research-eval-harness",
+   "path": "evals/scorecard.json",
+   "schema": null,
+   "description": "System-level scores"
+  },
+  "eval_failure_taxonomy": {
+   "producer": "research-eval-harness",
+   "path": "evals/failure_taxonomy.md",
+   "schema": null,
+   "description": "Recurring system failure modes"
+  },
+  "source_repro_plan": {
+   "producer": "result-reproducer",
+   "path": "reproduction/repro_plan.yaml",
+   "schema": null,
+   "description": "What of the SOURCE paper will be reproduced and at what scale"
+  },
+  "source_repro_report": {
+   "producer": "result-reproducer",
+   "path": "reproduction/source_repro_report.json",
+   "schema": "ReproductionLevel",
+   "description": "Reproduction outcome of the SOURCE paper's own results, graded RL0-RL4"
+  },
+  "source_repro_metrics": {
+   "producer": "result-reproducer",
+   "path": "reproduction/source_metrics.json",
+   "schema": null,
+   "description": "Locally measured numbers vs numbers reported in the source paper"
+  },
+  "repro_failure_taxonomy": {
+   "producer": "result-reproducer",
+   "path": "reproduction/failure_taxonomy.jsonl",
+   "schema": null,
+   "description": "Classified reasons reproduction fell short of RL4"
+  },
+  "comparison_mode": {
+   "producer": "reproduction-fallback-planner",
+   "path": "reproduction/comparison_mode.json",
+   "schema": "ComparisonMode",
+   "description": "Which comparative claims the project is allowed to make, derived from RL"
+  },
+  "idea_mode_constraints": {
+   "producer": "reproduction-fallback-planner",
+   "path": "reproduction/idea_mode_constraints.json",
+   "schema": null,
+   "description": "Which innovation modes remain admissible at this RL"
+  },
+  "fallback_decision_log": {
+   "producer": "reproduction-fallback-planner",
+   "path": "reproduction/fallback_decisions.jsonl",
+   "schema": null,
+   "description": "Degradation decisions and their justification"
+  },
+  "provider_registry": {
+   "producer": "literature-provider-manager",
+   "path": "literature/provider_registry.json",
+   "schema": null,
+   "description": "Scholarly API providers, auth state, quota and rate limits"
+  },
+  "quota_ledger": {
+   "producer": "literature-provider-manager",
+   "path": "literature/quota_ledger.jsonl",
+   "schema": null,
+   "description": "Per-provider call/quota consumption over the run"
+  },
+  "coverage_report": {
+   "producer": "literature-provider-manager",
+   "path": "literature/coverage_report.json",
+   "schema": null,
+   "description": "Measured retrieval coverage and its known blind spots"
+  },
+  "retro_benchmark": {
+   "producer": "retrospective-benchmark-builder",
+   "path": "evals/retro_benchmark.jsonl",
+   "schema": null,
+   "description": "Seed papers paired with their real published follow-up work"
+  },
+  "retro_benchmark_report": {
+   "producer": "retrospective-benchmark-builder",
+   "path": "evals/retro_benchmark_report.md",
+   "schema": null,
+   "description": "Construction method, leakage controls and known limits"
+  }
+ },
+ "internal_artifacts": {
+  "idea-evaluator": {
+   "resource_plan": {
+    "path": "ideas/resource_plan.yaml",
+    "schema": null,
+    "description": "Compute/data/time plan per idea"
+   }
+  },
+  "research-blueprint-compiler": {
+   "ablation_plan": {
+    "path": "experiments/ablation_plan.yaml",
+    "schema": null,
+    "description": "Ablations and counterfactual controls"
+   }
+  },
+  "experiment-runner": {
+   "run_index": {
+    "path": "run_index.sqlite",
+    "schema": null,
+    "description": "Queryable index over the ledger"
+   }
+  },
+  "data-analyst": {
+   "data_profile": {
+    "path": "analysis/data_profile.json",
+    "schema": null,
+    "description": "Schema, distribution and quality profile"
+   },
+   "data_transform_log": {
+    "path": "analysis/transform_log.jsonl",
+    "schema": null,
+    "description": "Every transformation applied"
+   },
+   "prepared_data": {
+    "path": "analysis/prepared/",
+    "schema": null,
+    "description": "Cleaned, split, leakage-checked data"
+   }
+  },
+  "integrity-auditor": {
+   "stats_required_fixes": {
+    "path": "analysis/required_fixes.md",
+    "schema": null,
+    "description": "BLOCKER/HIGH items to resolve"
+   }
+  },
+  "manuscript-builder": {
+   "section_blueprint": {
+    "path": "paper/section_blueprint.md",
+    "schema": null,
+    "description": "Per-section argumentative role"
+   }
+  },
+  "review-simulator": {
+   "revision_backlog": {
+    "path": "review/revision_backlog.md",
+    "schema": null,
+    "description": "Prioritized revision items"
+   }
+  },
+  "figure-factory": {
+   "figure_candidates": {
+    "path": "figures/candidates/",
+    "schema": null,
+    "description": "Generated figure variants"
+   },
+   "figure_captions": {
+    "path": "figures/captions_draft.md",
+    "schema": null,
+    "description": "Draft captions tied to claims"
+   },
+   "figure_storyboard": {
+    "path": "figures/figure_storyboard.json",
+    "schema": null,
+    "description": "Message and form for each figure"
+   },
+   "reconstructed_svg": {
+    "path": "figures/reconstructed/",
+    "schema": null,
+    "description": "Vector reconstruction of a raster figure"
+   },
+   "svg_reconstruction_map": {
+    "path": "figures/reconstruction_map.json",
+    "schema": null,
+    "description": "Source region -> vector element mapping"
+   }
+  },
+  "deck-factory": {
+   "deck_spec": {
+    "path": "slides/deck_spec.json",
+    "schema": null,
+    "description": "Structured per-slide specification"
+   },
+   "slide_evidence": {
+    "path": "slides/slide_evidence.json",
+    "schema": null,
+    "description": "Slide element -> project artifact links"
+   },
+   "slide_outline": {
+    "path": "slides/slide_outline.md",
+    "schema": null,
+    "description": "Defense narrative outline"
+   },
+   "speaker_timing": {
+    "path": "slides/speaker_timing.csv",
+    "schema": null,
+    "description": "Time budget per slide"
+   }
+  },
+  "researchforge-orchestrator": {
+   "progress_alerts": {
+    "path": ".researchforge/alerts.jsonl",
+    "schema": null,
+    "description": "Budget/stall alerts"
+   },
+   "resume_token": {
+    "path": ".researchforge/resume_token.json",
+    "schema": null,
+    "description": "Idempotent restart pointer"
+   }
+  },
+  "skill-evolution-manager": {
+   "skill_audit_machine_report": {
+    "path": "evals/machine_report.json",
+    "schema": null,
+    "description": "Machine-readable package audit"
+   },
+   "skill_audit_report": {
+    "path": "evals/skill_audit_report.md",
+    "schema": null,
+    "description": "Human-readable package audit"
+   },
+   "skill_eval_comparison": {
+    "path": "evals/skill_eval_comparison.json",
+    "schema": null,
+    "description": "Held-out comparison of skill versions"
+   },
+   "skill_patch": {
+    "path": "evals/skill_patch.diff",
+    "schema": null,
+    "description": "Proposed bounded skill edit"
+   },
+   "skill_promotion_decision": {
+    "path": "evals/promotion_decision.json",
+    "schema": null,
+    "description": "Promote/reject with rollback pointer"
+   }
+  },
+  "result-reproducer": {
+   "source_repro_env": {
+    "path": "reproduction/environment.lock",
+    "schema": null,
+    "description": "Exact environment in which reproduction was attempted"
+   }
+  }
+ },
+ "consumers": {
+  "paper-ingest": {
+   "artifacts": [],
+   "external": [
+    "external: paper locator (URL/PDF/HTML/DOI/arXiv/local path)",
+    "external: rendered page images",
+    "external: supplementary URLs or files"
+   ],
+   "feedback": []
+  },
+  "paper-model-builder": {
+   "artifacts": [
+    "locator_map",
+    "normalized_text"
+   ],
+   "external": [],
+   "feedback": []
+  },
+  "claim-evidence-graph": {
+   "artifacts": [
+    "paper_model",
+    "resolved_references"
+   ],
+   "external": [],
+   "feedback": [
+    "experiment_ledger",
+    "findings"
+   ]
+  },
+  "literature-provider-manager": {
+   "artifacts": [],
+   "external": [
+    "external: domain and recency scope",
+    "external: provider credentials and contact email for polite pools",
+    "external: run-level quota and cost budget"
+   ],
+   "feedback": []
+  },
+  "literature-search": {
+   "artifacts": [
+    "coverage_report",
+    "paper_model",
+    "provider_registry"
+   ],
+   "external": [
+    "external: landscape topic",
+    "external: library query",
+    "external: literature search objective",
+    "external: paper context for library lookup",
+    "external: personal library connector configuration",
+    "external: recency and time constraints",
+    "external: tool and domain catalog source"
+   ],
+   "feedback": []
+  },
+  "citation-resolver": {
+   "artifacts": [
+    "provider_registry"
+   ],
+   "external": [
+    "external: personal library metadata",
+    "external: raw reference strings or identifiers",
+    "external: seed paper canonical identifier"
+   ],
+   "feedback": []
+  },
+  "result-reproducer": {
+   "artifacts": [
+    "benchmark_matrix",
+    "contribution_atoms",
+    "literature_candidates",
+    "paper_model",
+    "sandbox_manifest"
+   ],
+   "external": [
+    "external: preferred research direction hint",
+    "external: reproduction tolerance policy",
+    "external: resource envelope (compute, time, budget)",
+    "external: resource envelope (wall-clock cap, compute class, cost cap)",
+    "external: sota_methods \u2014 current strongest methods on this paper's benchmarks"
+   ],
+   "feedback": [
+    "comparison_mode"
+   ]
+  },
+  "reproduction-fallback-planner": {
+   "artifacts": [
+    "baseline_license_risk",
+    "repro_failure_taxonomy",
+    "source_repro_metrics",
+    "source_repro_report"
+   ],
+   "external": [
+    "external: resource envelope",
+    "external: user risk tolerance and target venue"
+   ],
+   "feedback": []
+  },
+  "idea-seed-miner": {
+   "artifacts": [
+    "citation_clusters",
+    "contribution_atoms",
+    "coverage_report",
+    "literature_candidates",
+    "method_dependency_graph",
+    "paper_model",
+    "source_repro_report"
+   ],
+   "external": [
+    "external: target venue",
+    "external: tool and domain catalog source"
+   ],
+   "feedback": []
+  },
+  "idea-portfolio-generator": {
+   "artifacts": [
+    "analogy_candidates",
+    "comparison_mode",
+    "gap_ledger",
+    "idea_mode_constraints",
+    "source_repro_report",
+    "weakness_map"
+   ],
+   "external": [
+    "external: code exemplars for mutation",
+    "external: resource envelope (compute, time, budget)"
+   ],
+   "feedback": []
+  },
+  "idea-evaluator": {
+   "artifacts": [
+    "baseline_assets",
+    "citation_graph",
+    "comparison_mode",
+    "coverage_report",
+    "idea_portfolio",
+    "provider_registry",
+    "source_repro_report"
+   ],
+   "external": [
+    "external: resource envelope (compute, time, budget)"
+   ],
+   "feedback": []
+  },
+  "idea-ranker": {
+   "artifacts": [
+    "comparison_mode",
+    "coverage_report",
+    "feasibility_report",
+    "idea_portfolio",
+    "novelty_report"
+   ],
+   "external": [
+    "external: user priorities and weightings"
+   ],
+   "feedback": []
+  },
+  "user-feedback-gate": {
+   "artifacts": [
+    "comparison_mode",
+    "idea_pareto_front",
+    "ranked_ideas",
+    "ranking_rationale"
+   ],
+   "external": [
+    "external: user feedback on ranked ideas"
+   ],
+   "feedback": []
+  },
+  "research-blueprint-compiler": {
+   "artifacts": [
+    "baseline_assets",
+    "comparison_mode",
+    "selected_direction",
+    "source_repro_report"
+   ],
+   "external": [
+    "external: candidate method description",
+    "external: hypothesis under test",
+    "external: resource envelope (compute, time, budget)"
+   ],
+   "feedback": []
+  },
+  "evaluator-builder": {
+   "artifacts": [],
+   "external": [
+    "external: known failure modes and gaming patterns",
+    "external: research objective",
+    "external: submission/answer schema"
+   ],
+   "feedback": []
+  },
+  "sandbox-provisioner": {
+   "artifacts": [],
+   "external": [
+    "external: sandbox security profile"
+   ],
+   "feedback": []
+  },
+  "codebase-scaffolder": {
+   "artifacts": [
+    "baseline_assets",
+    "experiment_specs",
+    "research_blueprint"
+   ],
+   "external": [],
+   "feedback": [
+    "experiment_ledger"
+   ]
+  },
+  "experiment-runner": {
+   "artifacts": [
+    "acceptance_criteria",
+    "baseline_assets",
+    "blueprint_dag",
+    "code_tests",
+    "code_worktree",
+    "debug_terminal_status",
+    "environment_lock",
+    "evaluator_code",
+    "evaluator_spec",
+    "experiment_specs",
+    "failure_diagnosis",
+    "hidden_tests",
+    "idea_lineage_graph",
+    "implementation_plan",
+    "mutant_candidates",
+    "repair_commits",
+    "research_blueprint",
+    "sandbox_container_config",
+    "sandbox_manifest"
+   ],
+   "external": [
+    "external: artifact creation and edit events",
+    "external: runtime execution events"
+   ],
+   "feedback": []
+  },
+  "data-analyst": {
+   "artifacts": [
+    "best_candidate",
+    "experiment_ledger",
+    "experiment_specs",
+    "experiment_tree",
+    "ranked_branches"
+   ],
+   "external": [
+    "external: analysis question",
+    "external: raw dataset"
+   ],
+   "feedback": []
+  },
+  "integrity-auditor": {
+   "artifacts": [
+    "analysis_code",
+    "analysis_results",
+    "experiment_ledger",
+    "experiment_specs"
+   ],
+   "external": [
+    "external: keep/kill decision criteria"
+   ],
+   "feedback": []
+  },
+  "finding-memory": {
+   "artifacts": [
+    "analysis_code",
+    "analysis_report",
+    "assumption_tests",
+    "baseline_deviation_log",
+    "baseline_license_risk",
+    "baseline_metrics",
+    "baseline_repo_rankings",
+    "benchmark_matrix",
+    "branch_map",
+    "checkpoint_metadata",
+    "citation_gap_candidates",
+    "citation_resolution_report",
+    "claim_registry",
+    "closest_prior_work",
+    "contribution_atoms",
+    "decision_log",
+    "experiment_ledger",
+    "experiment_tree",
+    "fallback_decision_log",
+    "figure_table_index",
+    "gap_evidence",
+    "landscape_report",
+    "layout_warnings",
+    "library_hits",
+    "library_note_links",
+    "literature_retrieval_log",
+    "literature_search_plan",
+    "locator_map",
+    "meta_analysis",
+    "meta_analysis_decision",
+    "paper_assets",
+    "paper_source_file",
+    "quest_repo",
+    "quota_ledger",
+    "repro_failure_taxonomy",
+    "reproduction_report",
+    "section_map",
+    "source_manifest",
+    "source_repro_metrics",
+    "source_repro_plan",
+    "system_matrix",
+    "visual_notes"
+   ],
+   "external": [],
+   "feedback": [
+    "deck_manifest",
+    "figure_generation_trace",
+    "manuscript_pdf",
+    "response_to_reviewers",
+    "review_triage",
+    "revision_experiment_plan",
+    "revision_matrix",
+    "speaker_notes"
+   ]
+  },
+  "manuscript-builder": {
+   "artifacts": [
+    "bibliography",
+    "boundary_conditions",
+    "comparison_mode",
+    "evidence_graph",
+    "findings",
+    "meta_analysis",
+    "negative_findings",
+    "selected_direction"
+   ],
+   "external": [
+    "external: target venue",
+    "external: target venue template (LaTeX/Word style)"
+   ],
+   "feedback": [
+    "selected_figure"
+   ]
+  },
+  "claim-citation-auditor": {
+   "artifacts": [
+    "comparison_mode",
+    "draft_manifest",
+    "evidence_graph",
+    "experiment_ledger",
+    "experiment_specs",
+    "manuscript_draft",
+    "resolved_references",
+    "source_repro_report",
+    "stats_audit"
+   ],
+   "external": [],
+   "feedback": [
+    "response_to_reviewers",
+    "review_triage",
+    "revision_experiment_plan",
+    "revision_matrix"
+   ]
+  },
+  "review-simulator": {
+   "artifacts": [
+    "citation_audit",
+    "evidence_graph",
+    "experiment_ledger",
+    "integrity_gate",
+    "manuscript_draft",
+    "manuscript_spine"
+   ],
+   "external": [
+    "external: resource envelope (compute, time, budget)",
+    "external: target venue"
+   ],
+   "feedback": []
+  },
+  "figure-factory": {
+   "artifacts": [
+    "analysis_plots",
+    "analysis_results",
+    "evidence_graph",
+    "figure_plan",
+    "manuscript_spine"
+   ],
+   "external": [
+    "external: figure style reference",
+    "external: raster figure or structured visual spec",
+    "external: source raster figure",
+    "external: target venue"
+   ],
+   "feedback": []
+  },
+  "deck-factory": {
+   "artifacts": [
+    "comparison_mode",
+    "draft_manifest",
+    "editable_svg",
+    "experiment_ledger",
+    "manuscript_draft",
+    "manuscript_spine",
+    "meta_analysis",
+    "selected_figure",
+    "svg_element_map",
+    "svg_validation_report"
+   ],
+   "external": [
+    "external: PPTX template",
+    "external: defense audience profile",
+    "external: target talk duration"
+   ],
+   "feedback": []
+  },
+  "project-repo-manager": {
+   "artifacts": [],
+   "external": [
+    "external: paper locator (URL/PDF/HTML/DOI/arXiv/local path)",
+    "external: project intent statement",
+    "external: workspace and retention policy"
+   ],
+   "feedback": []
+  },
+  "release-gate": {
+   "artifacts": [
+    "artifact_manifest",
+    "bibliography",
+    "citation_audit",
+    "claim_audit",
+    "comparison_mode",
+    "defense_deck",
+    "finding_memory_graph",
+    "findings",
+    "integrity_gate",
+    "manuscript_draft",
+    "provenance_log",
+    "review_report",
+    "source_repro_report",
+    "stats_audit",
+    "submission_blockers"
+   ],
+   "external": [],
+   "feedback": [
+    "progress_state"
+   ]
+  },
+  "researchforge-orchestrator": {
+   "artifacts": [
+    "comparison_mode",
+    "evidence_graph",
+    "idea_portfolio",
+    "paper_model",
+    "ranked_ideas",
+    "release_bundle",
+    "release_manifest",
+    "release_report",
+    "research_blueprint",
+    "selected_direction"
+   ],
+   "external": [
+    "external: budget and cost policy",
+    "external: live runtime state feed",
+    "external: paper locator (URL/PDF/HTML/DOI/arXiv/local path)",
+    "external: resource envelope (compute, time, budget)",
+    "external: run mode (guided|auto|analysis-only)",
+    "external: user feedback on ranked ideas"
+   ],
+   "feedback": []
+  },
+  "retrospective-benchmark-builder": {
+   "artifacts": [
+    "citation_graph",
+    "coverage_report",
+    "provider_registry"
+   ],
+   "external": [
+    "external: domain scope and venue list",
+    "external: seed time window and evaluation window"
+   ],
+   "feedback": []
+  },
+  "research-eval-harness": {
+   "artifacts": [
+    "evaluator_code",
+    "retro_benchmark",
+    "retro_benchmark_report"
+   ],
+   "external": [
+    "external: evaluation task suite",
+    "external: skill version under evaluation"
+   ],
+   "feedback": []
+  },
+  "skill-evolution-manager": {
+   "artifacts": [
+    "eval_failure_taxonomy",
+    "eval_runs",
+    "eval_scorecard"
+   ],
+   "external": [
+    "external: held-out evaluation suite",
+    "external: skill catalog source",
+    "external: skill version under evaluation",
+    "external: skills directory path"
+   ],
+   "feedback": []
+  }
+ },
+ "depends_on": {
+  "paper-ingest": [],
+  "paper-model-builder": [
+   "paper-ingest"
+  ],
+  "claim-evidence-graph": [
+   "citation-resolver",
+   "paper-model-builder"
+  ],
+  "literature-provider-manager": [],
+  "literature-search": [
+   "literature-provider-manager",
+   "paper-model-builder"
+  ],
+  "citation-resolver": [
+   "literature-provider-manager"
+  ],
+  "result-reproducer": [
+   "literature-search",
+   "paper-model-builder",
+   "sandbox-provisioner"
+  ],
+  "reproduction-fallback-planner": [
+   "result-reproducer"
+  ],
+  "idea-seed-miner": [
+   "citation-resolver",
+   "literature-provider-manager",
+   "literature-search",
+   "paper-model-builder",
+   "result-reproducer"
+  ],
+  "idea-portfolio-generator": [
+   "idea-seed-miner",
+   "reproduction-fallback-planner",
+   "result-reproducer"
+  ],
+  "idea-evaluator": [
+   "citation-resolver",
+   "idea-portfolio-generator",
+   "literature-provider-manager",
+   "reproduction-fallback-planner",
+   "result-reproducer"
+  ],
+  "idea-ranker": [
+   "idea-evaluator",
+   "idea-portfolio-generator",
+   "literature-provider-manager",
+   "reproduction-fallback-planner"
+  ],
+  "user-feedback-gate": [
+   "idea-ranker",
+   "reproduction-fallback-planner"
+  ],
+  "research-blueprint-compiler": [
+   "reproduction-fallback-planner",
+   "result-reproducer",
+   "user-feedback-gate"
+  ],
+  "evaluator-builder": [],
+  "sandbox-provisioner": [],
+  "codebase-scaffolder": [
+   "research-blueprint-compiler",
+   "result-reproducer"
+  ],
+  "experiment-runner": [
+   "codebase-scaffolder",
+   "evaluator-builder",
+   "idea-portfolio-generator",
+   "research-blueprint-compiler",
+   "result-reproducer",
+   "sandbox-provisioner"
+  ],
+  "data-analyst": [
+   "experiment-runner",
+   "research-blueprint-compiler"
+  ],
+  "integrity-auditor": [
+   "data-analyst",
+   "experiment-runner",
+   "research-blueprint-compiler"
+  ],
+  "finding-memory": [
+   "citation-resolver",
+   "claim-evidence-graph",
+   "data-analyst",
+   "experiment-runner",
+   "idea-evaluator",
+   "idea-seed-miner",
+   "integrity-auditor",
+   "literature-provider-manager",
+   "literature-search",
+   "paper-ingest",
+   "paper-model-builder",
+   "project-repo-manager",
+   "reproduction-fallback-planner",
+   "result-reproducer",
+   "user-feedback-gate"
+  ],
+  "manuscript-builder": [
+   "citation-resolver",
+   "claim-evidence-graph",
+   "finding-memory",
+   "integrity-auditor",
+   "reproduction-fallback-planner",
+   "user-feedback-gate"
+  ],
+  "claim-citation-auditor": [
+   "citation-resolver",
+   "claim-evidence-graph",
+   "experiment-runner",
+   "integrity-auditor",
+   "manuscript-builder",
+   "reproduction-fallback-planner",
+   "research-blueprint-compiler",
+   "result-reproducer"
+  ],
+  "review-simulator": [
+   "claim-citation-auditor",
+   "claim-evidence-graph",
+   "experiment-runner",
+   "manuscript-builder"
+  ],
+  "figure-factory": [
+   "claim-evidence-graph",
+   "data-analyst",
+   "manuscript-builder"
+  ],
+  "deck-factory": [
+   "experiment-runner",
+   "figure-factory",
+   "integrity-auditor",
+   "manuscript-builder",
+   "reproduction-fallback-planner"
+  ],
+  "project-repo-manager": [],
+  "release-gate": [
+   "citation-resolver",
+   "claim-citation-auditor",
+   "deck-factory",
+   "experiment-runner",
+   "finding-memory",
+   "integrity-auditor",
+   "manuscript-builder",
+   "reproduction-fallback-planner",
+   "result-reproducer",
+   "review-simulator"
+  ],
+  "researchforge-orchestrator": [
+   "claim-evidence-graph",
+   "idea-portfolio-generator",
+   "idea-ranker",
+   "paper-model-builder",
+   "release-gate",
+   "reproduction-fallback-planner",
+   "research-blueprint-compiler",
+   "user-feedback-gate"
+  ],
+  "retrospective-benchmark-builder": [
+   "citation-resolver",
+   "literature-provider-manager"
+  ],
+  "research-eval-harness": [
+   "evaluator-builder",
+   "retrospective-benchmark-builder"
+  ],
+  "skill-evolution-manager": [
+   "research-eval-harness"
+  ]
+ }
+}
